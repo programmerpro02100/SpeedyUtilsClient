@@ -1,0 +1,41 @@
+.feedbackContainer {
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: 0px 4px 10px var(--shadow-color);
+  margin: 2rem 0;
+}
+
+.feedbackContainer h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.ratingLabel {
+  width: 150px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.progressBar {
+  flex: 1;
+  height: 10px;
+  background: var(--secondary-bg);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), #ffaa00);
+  transition: width 0.5s ease-in-out;
+}

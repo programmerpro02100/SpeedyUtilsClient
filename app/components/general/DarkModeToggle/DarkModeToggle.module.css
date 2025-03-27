@@ -1,0 +1,60 @@
+/* Toggle Container */
+.toggleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Switch Container */
+  .switch {
+    width: 30px;
+    height: 50px;
+    background: #e0e0e0;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Circle (Icon Holder) */
+  .circle {
+    width: 20px;
+    height: 20px;
+    background: #2a2a2a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Light Mode */
+  .light {
+    background: #e0e0e0;
+  }
+  
+  .light .circle {
+    top: 5px;
+    background: #1e1e1e;
+  }
+  
+  /* Dark Mode */
+  .dark {
+    background: #2a2a2a;
+  }
+  
+  .dark .circle {
+    bottom: 5px;
+    background: #ffbf00;
+  }
+  

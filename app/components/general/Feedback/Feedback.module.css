@@ -1,0 +1,168 @@
+/* Overall Container */
+.feedbackContainer {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Feedback Button */
+.feedbackBtn {
+  background: linear-gradient(135deg, var(--accent-color), #ff8800);
+  color: var(--primary-bg);
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feedbackBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+/* Modal Backdrop */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Modal */
+.modal {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Rating Options */
+.ratingOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.ratingBtn {
+  background: var(--secondary-bg);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  color: var(--text-color);
+}
+
+.ratingBtn:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.selected {
+  background: var(--accent-color) !important;
+  font-weight: bold;
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--shadow-color);
+  font-size: 14px;
+  transition: border 0.2s ease-in-out;
+  background: var(--primary-bg);
+  color: var(--text-color);
+}
+
+.textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+/* Buttons in Modal */
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.submitBtn {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.submitBtn:hover {
+  transform: scale(1.05);
+}
+
+.closeBtn {
+  background: #dc3545;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.closeBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Feedback List */
+.feedbackList {
+  margin-top: 20px;
+}
+
+.feedbackItem {
+  background: var(--secondary-bg);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid var(--accent-color);
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.feedbackRating {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.feedbackComment {
+  font-style: italic;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

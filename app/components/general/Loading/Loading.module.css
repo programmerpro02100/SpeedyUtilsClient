@@ -1,0 +1,46 @@
+.loadingContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    width: 300px;
+  }
+
+  .wrapper{
+    height:100vh;
+  }
+  
+  .loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-bg);
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loadingText {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+  }
+  
+  .loadingSubtext {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    font-style: italic;
+    opacity: 0.8;
+  }
+  

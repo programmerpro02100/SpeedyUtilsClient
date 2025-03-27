@@ -1,0 +1,49 @@
+.aboutUs {
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--primary-bg);
+    color: var(--text-color);
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 40px;
+  }
+  
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    max-width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+  }
+  

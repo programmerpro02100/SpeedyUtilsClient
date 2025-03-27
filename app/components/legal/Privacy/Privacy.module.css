@@ -1,0 +1,48 @@
+.privacyPolicy {
+    padding: 60px 20px;
+    background: var(--primary-bg);
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 40px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+  }
+  
+  .section h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .section a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .section a:hover {
+    text-decoration: underline;
+  }
+  

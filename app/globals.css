@@ -1,26 +1,99 @@
-@import "tailwindcss";
-
+/* ========= THEME VARIABLES ========= */
+/* Light Theme (Default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-bg: #ffffff;
+  --secondary-bg: #f4f4f4;
+  --text-color: #1e1e1e;
+  --secondary-text-color: #4a4a4a; /* NEW: Secondary Text Color */
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #ffbf00;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --secondary-text-color: #b0b0b0; /* NEW: Secondary Text Color */
+  --card-bg: rgba(30, 30, 30, 0.8);
+  --shadow-color: rgba(0, 0, 0, 0.5); /* Better dark mode shadow */
+  --accent-color: #ff007f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========= GLOBAL STYLES ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+/* ========= SMOOTH SCROLL ========= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========= CUSTOM SCROLLBAR ========= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* ========= TOOL TITLE ========= */
+.tool-title {
+  margin-top: 7rem;
+  font-weight: 900;
+}
+
+/* ========= CARD STYLE ========= */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow-color); /* Updated shadow */
+}
+
+/* ========= BUTTON STYLE ========= */
+.button {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--text-color);
+  color: var(--primary-bg);
+}
+
+/* tool page */
+.tool-description{
+  font-size: 0.9rem;
+  margin: 6rem 0;
+}
+.tool-description h2{
+  font-weight: 900;
+  font-size: 1rem;
 }

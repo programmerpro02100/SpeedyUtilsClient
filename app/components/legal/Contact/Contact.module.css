@@ -1,0 +1,118 @@
+.contact {
+  padding: 60px 20px;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  background: var(--secondary-bg);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 30px;
+}
+
+.successMessage {
+  font-size: 1.2rem;
+  color: var(--success-color);
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid var(--success-color);
+  border-radius: 5px;
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  text-align: left;
+  position: relative;
+}
+
+.formGroup label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.icon {
+  color: var(--accent-color);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-color);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 150, 255, 0.5);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+.submitBtn {
+  background: var(--accent-color);
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.submitBtn:hover {
+  background: var(--accent-hover-color);
+  box-shadow: 0 4px 8px rgba(0, 150, 255, 0.3);
+}
+
+.sendIcon {
+  font-size: 1.2rem;
+}

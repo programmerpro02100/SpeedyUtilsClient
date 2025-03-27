@@ -1,0 +1,89 @@
+/* Toolbox Container */
+.toolboxContainer {
+    background: var(--primary-bg);
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .navButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navButton:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+  }
+  
+  .active {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+  }
+  
+  /* Toolbox Grid */
+  .toolboxGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Tool Card */
+  .toolCard {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px var(--shadow-color);
+    cursor: pointer;
+  }
+  
+  .toolCard h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  .categoryTag {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+  }
+  
+  /* Hover Animation */
+  .toolCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px var(--shadow-color);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .navButton {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
