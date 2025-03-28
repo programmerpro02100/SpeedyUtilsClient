@@ -5,6 +5,11 @@ import Features from "./components/home/Features/Features";
 import Footer from "./components/general/Footer/Footer";
 import { ApiFetch } from "@/utils/ApiFetch";
 import { Tool_T} from "@/interfaces";
+import genMetadata from "./components/MetaTags";
+
+export function generateMetadata(){
+  return genMetadata();
+}
 
 // ✅ Fetch Data in a Server Component
 export default async function Homepage() {
