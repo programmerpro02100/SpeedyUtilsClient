@@ -1,0 +1,121 @@
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    text-align: center;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .container:hover {
+    box-shadow: 0 10px 20px var(--shadow-color);
+  }
+  
+  .title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+  }
+  
+  .description {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--secondary-text-color);
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .inputField {
+    width: calc(50% - 8px);
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background: var(--secondary-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .inputField:focus {
+    background: var(--primary-bg);
+    border-color: var(--text-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-color);
+  }
+  
+  .solveButton {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-bg);
+    background: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  }
+  
+  .solveButton:hover {
+    background: var(--text-color);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px var(--accent-color);
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 12px;
+    text-shadow: 0 0 8px #ff4d4d;
+  }
+  
+  .result {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--secondary-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .resultTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .resultItem {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px;
+    color: var(--text-color);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

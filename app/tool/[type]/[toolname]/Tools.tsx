@@ -41,7 +41,7 @@ export default function Tool({tool}: {tool: ToolType}) {
   
     const DynamicComponent = dynamic(
       () =>
-        import(`@/app/components/tools/${folderName}/${fileName}`).catch(() => {
+        import(`@/app/components/tools/${folderName}/${fileName}/${fileName}`).catch(() => {
            return notFound();
         }),
       { ssr: false }
