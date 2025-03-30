@@ -22,7 +22,7 @@ export default function MetaTagChecker() {
  }
 
   const fetchMetaTags = async () => {
-    if(!verify) return;
+    if(!verify()) return;
     setLoading(true);
     setError("");
     try {
