@@ -51,8 +51,8 @@ export default function SitemapValidator() {
             return;
         }
         setUrls(data);
-        const statusResults = await checkURLs(data);
-        setResults(statusResults);
+        // const statusResults = await checkURLs(data);
+        // setResults(statusResults);
         setLoading(false);
     };
     
@@ -77,10 +77,10 @@ export default function SitemapValidator() {
                             </tr>
                         </thead>
                         <tbody>
-                            {results.map(({ url, status }) => (
+                            {urls.map((url) => (
                                 <tr key={url}>
                                     <td>{url}</td>
-                                    <td>{status}</td>
+                                    {/* <td>{status}</td> */}
                                 </tr>
                             ))}
                         </tbody>
