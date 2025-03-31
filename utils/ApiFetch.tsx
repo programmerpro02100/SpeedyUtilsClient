@@ -12,4 +12,3 @@ export function ApiFetch(url: string, options: RequestInit = {}) {
     },
   });
 }
-

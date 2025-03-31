@@ -68,7 +68,7 @@ export default function SitemapValidator() {
             {urls.length > 0 && (
                 <div className={styles.resultContainer}>
                     <Alert variant="info">Total URLs: {urls.length}</Alert>
-                    <h4>URL Status</h4>
+                    <h4>URL</h4>
                     <Table striped bordered hover>
                         <thead>
                             <tr>
