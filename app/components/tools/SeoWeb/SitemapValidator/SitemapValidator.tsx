@@ -3,10 +3,14 @@
 import { useState } from "react";
 import styles from "./SitemapValidator.module.css";
 import { Container, Form, Button, Table, Alert, Spinner } from "react-bootstrap";
+import { ApiFetch } from "@/utils/ApiFetch";
 
 const validateSitemap = async (url: string) => {
     try {
-        const response = await fetch(url);
+        const response = await ApiFetch("/proxy", {
+            method: 'POST',
+            body: JSON.stringify({url})
+        });
         if (!response.ok) throw new Error("Invalid Sitemap URL");
         const text = await response.text();
         const parser = new DOMParser();
