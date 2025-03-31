@@ -73,7 +73,7 @@ export default function SitemapValidator() {
                         <thead>
                             <tr>
                                 <th>URL</th>
-                                <th>Status</th>
+                                {/* <th>Status</th> */}
                             </tr>
                         </thead>
                         <tbody>
