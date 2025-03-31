@@ -1,0 +1,43 @@
+.analyzerContainer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.textarea {
+    width: 100%;
+    border: 2px solid var(--bs-gray-400);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.analyzeBtn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--bs-primary);
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+.analyzeBtn:hover {
+    background-color: var(--bs-dark);
+}
+
+.resultContainer {
+    margin-top: 20px;
+}
+
+table {
+    text-align: center;
+}
