@@ -1,0 +1,43 @@
+.validatorContainer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.input {
+    width: 100%;
+    border: 2px solid var(--bs-gray-400);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.validateBtn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--bs-primary);
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+.validateBtn:hover {
+    background-color: var(--bs-dark);
+}
+
+.resultContainer {
+    margin-top: 20px;
+}
+
+.validatorContainer table {
+    text-align: center;
+}
