@@ -35,11 +35,12 @@ const FileZipConverter = () => {
   };
 
   return (
-    <Card className={styles.container}>
-      <Card.Body className={styles.content}>
-        <h2 className={styles.title}>File to ZIP Converter</h2>
+    <Card className={`${styles.card} card`}>
+      <Card.Body>
+        <h2 className="tool-title">File to ZIP Converter</h2>
+        <p className="tool-description">Select multiple files and compress them into a single ZIP archive.</p>
         <input type="file" multiple onChange={handleFileChange} className={styles.fileInput} />
-        <Button onClick={createZip} disabled={!files || isZipping} className={styles.zipButton}>
+        <Button onClick={createZip} disabled={!files || isZipping} className={`${styles.button} button`}>
           {isZipping ? "Zipping..." : "Download ZIP"}
         </Button>
       </Card.Body>

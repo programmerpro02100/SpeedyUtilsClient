@@ -1,57 +1,48 @@
-.container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background: var(--background-secondary);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-primary);
-  }
-  
-  .fileInput {
+.fileInput {
     width: 100%;
-    padding: 10px;
-    border: 2px dashed var(--border-color);
+    padding: 12px;
+    border: 2px dashed var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    text-align: center;
     border-radius: 8px;
-    background: var(--background-tertiary);
-    color: var(--text-secondary);
     cursor: pointer;
     transition: border 0.3s ease;
-  }
-  
-  .fileInput:hover {
-    border-color: var(--primary);
-  }
-  
-  .zipButton {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.fileInput:hover {
+    border-color: var(--accent-color);
+}
+
+.fileInput::file-selector-button {
+    background: var(--accent-color);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.fileInput::file-selector-button:hover {
+    background: var(--text-color);
+    color: var(--primary-bg);
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.button {
     width: 100%;
     font-size: 1rem;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
-    background: var(--primary);
-    color: white;
-    transition: background 0.3s ease;
-  }
-  
-  .zipButton:hover {
-    background: var(--primary-dark);
-  }
-  
-  .zipButton:disabled {
-    background: var(--disabled);
-    cursor: not-allowed;
-  }
-  
+    font-weight: 600;
+}
