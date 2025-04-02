@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /pdf\.worker\.(min\.)?js/,
+      use: "worker-loader",
+    });
+    return config;
+  },
   async rewrites() {
     const serverURL=  process.env.NODE_ENV === "production" 
     ? "https://server.speedyutils.com" 
