@@ -1,0 +1,40 @@
+.fileInput {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border 0.3s ease;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.fileInput:hover {
+    border-color: var(--accent-color);
+}
+
+.fileName {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 10px;
+}
+
+.textOutput {
+    margin-top: 15px;
+    padding: 10px;
+    background: var(--secondary-bg);
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--shadow-color);
+}
+
+.placeholder {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin-top: 10px;
+}
