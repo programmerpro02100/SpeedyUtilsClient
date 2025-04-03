@@ -1,20 +1,20 @@
 .card {
-    background: var(--bg-color);
-    color: var(--text-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    padding: 16px;
   }
   
   .tool-title {
-    font-size: 1.8rem;
+    font-size: 24px;
     font-weight: bold;
-    text-align: center;
+    margin-bottom: 8px;
   }
   
   .tool-description {
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
   }
   
   .textarea {
@@ -22,33 +22,40 @@
     height: 150px;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background: var(--input-bg);
-    color: var(--text-color);
-    font-size: 1rem;
+    border-radius: 8px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 16px;
   }
   
   .button {
-    display: block;
-    width: 100%;
     margin-top: 10px;
-    background: var(--primary-color);
-    color: var(--button-text);
+    background-color: var(--primary-color);
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: white;
     cursor: pointer;
   }
   
   .button:hover {
-    background: var(--primary-hover);
+    background-color: var(--primary-hover);
   }
   
   .outputContainer {
-    margin-top: 20px;
+    margin-top: 16px;
   }
   
-  h3 {
-    margin-bottom: 10px;
+  .outputContainer h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  
+  .output {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
   }
   
