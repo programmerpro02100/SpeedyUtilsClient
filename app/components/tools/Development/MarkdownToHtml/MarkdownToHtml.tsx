@@ -1,44 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { marked } from "marked";
 import { Card, Button } from "react-bootstrap";
+import MonacoEditor from "@monaco-editor/react";
 import styles from "./MarkdownToHtml.module.css";
 
 const MarkdownToHtmlConverter = () => {
-    const [markdown, setMarkdown] = useState("**Hello, world!** Type some Markdown here...");
-    const [html, setHtml] = useState("<p><strong>Hello, world!</strong> Type some Markdown here...</p>");
+  const [markdown, setMarkdown] = useState<string>("**Hello, world!** Type some Markdown here...");
+  const [html, setHtml] = useState<string>("");
 
-    const convertMarkdown = async (text: string) => {
-        setMarkdown(text);
+  // Function to safely convert Markdown to HTML
+  const convertMarkdown = async (text: string) => {
+    setMarkdown(text);
 
-        const htmlOutput = await marked(text); // Ensure we resolve the promise
-        setHtml(htmlOutput);
-    };
+    // Ensure we handle both synchronous and asynchronous cases
+    const compiledHtml = await Promise.resolve(marked.parse(text));
+    setHtml(compiledHtml);
+  };
 
-    return (
-        <Card className={`${styles.card} card`}>
-            <Card.Body>
-                <h2 className="tool-title">Markdown to HTML Converter</h2>
-                <p className="tool-description">Convert your Markdown text into clean, formatted HTML instantly.</p>
+  const copyToClipboard = async () => {
+    if (html) {
+      await navigator.clipboard.writeText(html);
+    }
+  };
 
-                <textarea
-                    className={styles.textarea}
-                    value={markdown}
-                    onChange={(e) => convertMarkdown(e.target.value)}
-                    placeholder="Type Markdown here..."
-                />
+  return (
+    <Card className={`${styles.card} card`}>
+      <Card.Body>
+        <h2 className="tool-title">Markdown to HTML Converter</h2>
+        <p className="tool-description">Convert your Markdown text into clean, formatted HTML instantly.</p>
+        
+        <textarea
+          className={styles.textarea}
+          value={markdown}
+          onChange={(e) => convertMarkdown(e.target.value)}
+          placeholder="Type Markdown here..."
+        />
+        
+        <Button className={styles.button} onClick={copyToClipboard}>Copy HTML</Button>
 
-
-                <Button className="button" onClick={() => navigator.clipboard.writeText(html)}>Copy HTML</Button>
-
-                <div className={styles.outputContainer}>
-                    <h3>Converted HTML:</h3>
-                    <div className={styles.output} dangerouslySetInnerHTML={{ __html: html }} />
-                </div>
-            </Card.Body>
-        </Card>
-    );
+        <div className={styles.outputContainer}>
+          <h3>Converted HTML:</h3>
+          <MonacoEditor 
+            height="250px"
+            language="html"
+            value={html} // No TypeScript errors
+            options={{ theme: "vs-dark", readOnly: true }}
+          />
+        </div>
+      </Card.Body>
+    </Card>
+  );
 };
 
 export default MarkdownToHtmlConverter;
