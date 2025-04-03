@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Card, Button } from "react-bootstrap";
 import Editor from "@monaco-editor/react";
 import styles from "./MarkdownToHtml.module.css";
 
 const MarkdownToHtmlConverter = () => {
-  const [markdown, setMarkdown] = useState("**Hello, world!** Type some Markdown here...");
+  const [markdown, setMarkdown] = useState("");
+  useEffect(()=>{
+    setMarkdown("Type or Paste some Markdown here...")
+  }, [])
   
   const handleCopyHtml = () => {
     const htmlString = document.getElementById("markdown-output")?.innerHTML || "";
@@ -17,9 +20,6 @@ const MarkdownToHtmlConverter = () => {
   return (
     <Card className={`${styles.card} card`}>
       <Card.Body>
-        <h2 className="tool-title">Markdown to HTML Converter</h2>
-        <p className="tool-description">Convert your Markdown text into clean, formatted HTML instantly.</p>
-
         {/* Markdown Input */}
         <textarea
           className={styles.textarea}

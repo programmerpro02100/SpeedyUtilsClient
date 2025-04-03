@@ -1,61 +1,80 @@
 .card {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: none;
-    padding: 16px;
-  }
-  
-  .tool-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .tool-description {
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: var(--text-secondary);
-  }
-  
-  .textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--bg-input);
-    color: var(--text-primary);
-    font-size: 16px;
-  }
-  
-  .button {
-    margin-top: 10px;
-    background-color: var(--primary-color);
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: var(--primary-hover);
-  }
-  
-  .outputContainer {
-    margin-top: 16px;
-  }
-  
-  .outputContainer h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-  
-  .output {
-    padding: 10px;
-    border-radius: 8px;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-  }
-  
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Textarea Styling */
+.textarea {
+  width: 100%;
+  height: 180px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 16px;
+  resize: vertical;
+  transition: all 0.2s ease-in-out;
+  font-family: "Fira Code", monospace;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-hover);
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Output Container */
+.outputContainer {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Monaco Editor Styling */
+.editor {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+/* Title */
+.outputContainer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+}
