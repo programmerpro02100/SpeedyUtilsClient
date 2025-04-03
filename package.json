@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^2.6.1",
     "bootstrap": "^5.3.3",
     "jszip": "^3.10.1",
+    "marked": "^15.0.7",
     "next": "15.2.3",
     "pdfjs-dist": "^5.1.91",
     "react": "^19.0.0",
