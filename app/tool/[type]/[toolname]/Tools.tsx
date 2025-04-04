@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect,ComponentType } from "react";
+import React, { useState, useEffect, ComponentType } from "react";
 import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import Navigbar from "@/app/components/general/Navigbar/Navigbar";
@@ -12,17 +12,18 @@ import FeedbackScrollButton from "@/app/components/general/FeedbackScrollButton/
 import LoadingPage from "@/app/other/LoadingPage";
 import { ToolType } from "@/interfaces";
 import { notFound, useRouter } from "next/navigation";
+import Skeleton from "@mui/material/Skeleton";
 
-export default function Tool({tool}: {tool: ToolType}) {
+export default function Tool({ tool }: { tool: ToolType }) {
   const dispatch = useDispatch();
   const [ToolComponent, setToolComponent] = useState<ComponentType | null>(null);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (ToolComponent && tool) {
-        setLoading(false)
+      setLoading(false)
     } else {
-        setLoading(true)
+      setLoading(true)
     }
   }, [tool, ToolComponent, dispatch]);
 
@@ -30,35 +31,46 @@ export default function Tool({tool}: {tool: ToolType}) {
   useEffect(() => {
     const type = tool.type;
     const toolname = tool.name;
-  
+
     const folderName = type
       .replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
       .replace(/^\w/, (c) => c.toUpperCase());
-  
+
     const fileName = toolname
       .replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
       .replace(/^\w/, (c) => c.toUpperCase());
-  
+
     const DynamicComponent = dynamic(
       () =>
         import(`@/app/components/tools/${folderName}/${fileName}/${fileName}`).catch(() => {
-           return notFound();
+          return notFound();
         }),
       { ssr: false }
     );
-  
+
     // ✅ FIX: Set as a function reference
     setToolComponent(DynamicComponent);
-  }, []);  
+  }, []);
 
-  if (isLoading) return <LoadingPage loadingText="Loading..."/>;
 
   return (
     <>
       <Navigbar />
       <h2 className="text-center tool-title">{tool?.title}</h2>
 
-      {ToolComponent}
+      {isLoading ? (
+        <Skeleton
+          variant="rectangular"
+          width="80%"
+          height={200}
+          className="m-auto"
+          animation="wave"
+          sx={{ borderRadius: '8px' }}
+        />
+      ) : (
+        ToolComponent
+      )}
+
 
       <FeedbackScrollButton />
 
