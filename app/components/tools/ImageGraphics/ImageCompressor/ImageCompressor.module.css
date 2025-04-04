@@ -1,52 +1,76 @@
-.card {
+/* Image Compressor Module CSS */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    border-radius: 10px;
-    background: var(--bg-card);
-    box-shadow: var(--box-shadow);
-    transition: all 0.3s ease-in-out;
+    background: var(--primary-bg);
+    color: var(--text-color);
   }
   
-  .card:hover {
-    transform: translateY(-5px);
+  .card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    color: var(--text-color) !important;
   }
   
   .button {
-    background: var(--btn-bg);
-    color: var(--btn-text);
-    border: none;
+    background: var(--accent-color);
+    color: #fff;
     padding: 10px 15px;
-    border-radius: 6px;
-    font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
   }
   
   .button:hover {
-    background: var(--btn-hover);
+    background: var(--text-color);
+    color: var(--primary-bg);
   }
   
-  .mb-3 {
+  .file-input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .input-group {
     margin-bottom: 15px;
   }
   
-  .imageInfo {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-muted);
+  .previewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
   }
   
-  .previewContainer {
-    margin-top: 20px;
-    text-align: center;
+  .previewContainer h3 {
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
   
   .preview {
-    margin-top: 10px;
-    border-radius: 6px;
-    box-shadow: var(--image-shadow);
-  }
-  
-  .alert {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
     margin-top: 10px;
   }
   
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  .imageInfo{
+    color: var(--text-color) !important;
+  }
