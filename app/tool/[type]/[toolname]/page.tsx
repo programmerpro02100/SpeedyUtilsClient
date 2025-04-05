@@ -1,10 +1,8 @@
-import { notFound } from "next/navigation";
 import Tool from "./Tools"; // Import the client component
-import { ApiFetch } from "@/utils/ApiFetch";
-import { ToolType } from "@/interfaces";
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
 
+export const revalidate = 86400; // 24 hours in seconds
 export async function generateMetadata({
   params,
 }: {
@@ -15,19 +13,19 @@ export async function generateMetadata({
 
   const tool = tools.find(tool => tool.name === toolname)!;
 
-  return genMetadata(tool.title, tool.metaDescription, tool.metaKeywords);
+  return genMetadata({
+    title: tool.title, 
+    description: tool.metaDescription,
+    keywords: tool.metaKeywords,
+    isToolPage:true,
+  });
 }
 
 // ✅ Fetch Tool Data in a Server Component
 export default async function ToolPage({ params }: { params: Promise<{ type: string, toolname: string }> }) {
   const { toolname } = await params;
-  const res = await ApiFetch(`/get-tool/${toolname}`);
-  if (!res.ok) {
-    return notFound(); // Show 404 error page
-  }
-
-  const tool: ToolType = await res.json();
-
+  const tools = await getCachedTools();
+  const tool = tools.find(tool => tool.name === toolname)!;
   return (
     <>
       <Tool tool={tool} />

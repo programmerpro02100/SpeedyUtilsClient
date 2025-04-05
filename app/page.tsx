@@ -8,7 +8,9 @@ import { ToolType } from "@/interfaces";
 import { getCachedTools } from "@/utils/BuildCache";
 
 export function generateMetadata(){
-  return genMetadata();
+  return genMetadata({
+    searchUrlTemplate: "https://www.speedyutils.com/site/search?q=",
+  });
 }
 
 // ✅ Fetch Data in a Server Component

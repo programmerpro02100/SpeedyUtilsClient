@@ -8,13 +8,13 @@ import { useSelector } from "react-redux";
 import { ApiFetch } from "@/utils/ApiFetch";
 import { RootState } from "@/store/store"; // Assuming you have a RootState type
 
-export default function Feedback({toolname}: {toolname: string}) {
+export default function Feedback({toolname, userFeedbacks}: {toolname: string, userFeedbacks: string[]}) {
   const user = useSelector((state: RootState) => state.user.user);
 
   const [showModal, setShowModal] = useState(false);
   const [selectedRating, setSelectedRating] = useState("");
   const [comment, setComment] = useState("");
-  const [feedbacks, setFeedbacks] = useState<string[]>([]);
+  const [feedbacks, setFeedbacks] = useState(userFeedbacks);
 
   const ratingOptions = [
     { text: "Very Helpful", emoji: "🔥" },
@@ -24,16 +24,6 @@ export default function Feedback({toolname}: {toolname: string}) {
     { text: "Not Helpful", emoji: "👎" },
     { text: "Not Worth the Time", emoji: "💀" },
   ];
-
-  useEffect(() => {
-    ApiFetch(`/feedback/display/${toolname}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch feedbacks");
-        return res.json();
-      })
-      .then((data) => setFeedbacks(data))
-      .catch((err) => console.error("Error fetching feedbacks:", err));
-  }, []);
 
   const submitFeedback = async () => {
     if (!selectedRating) return alert("Please select a rating!");

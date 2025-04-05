@@ -3,7 +3,9 @@ import React from 'react';
 import genMetadata from './components/MetaTags';
 
 export function generateMetadata(){
-  return genMetadata();
+  return genMetadata({
+    indexing: false
+  });
 }
 
 export default function Error() {

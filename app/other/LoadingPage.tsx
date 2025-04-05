@@ -3,7 +3,9 @@ import Loading from '@/app/components/general/Loading/Loading'
 import genMetadata from '../components/MetaTags';
 
 export function generateMetadata(){
-  return genMetadata();
+  return genMetadata({
+    indexing: false
+  });
 }
 export default function LoadingPage({loadingText} : {loadingText: string}) {
   return (

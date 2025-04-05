@@ -9,7 +9,6 @@ import { Container } from "react-bootstrap";
 import Feedback from "@/app/components/general/Feedback/Feedback";
 import { useDispatch, useSelector } from "react-redux";
 import FeedbackScrollButton from "@/app/components/general/FeedbackScrollButton/FeedbackScrollButton";
-import LoadingPage from "@/app/other/LoadingPage";
 import { ToolType } from "@/interfaces";
 import { notFound, useRouter } from "next/navigation";
 import Skeleton from "@mui/material/Skeleton";
@@ -80,7 +79,7 @@ export default function Tool({ tool }: { tool: ToolType }) {
         </Container>
       </div>
 
-      <Feedback toolname={tool.name} />
+      <Feedback toolname={tool.name} userFeedbacks={tool.feedbacks}/>
       <Footer />
     </>
   );

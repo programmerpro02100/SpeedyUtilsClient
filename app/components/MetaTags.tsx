@@ -1,12 +1,26 @@
-export default function genMetadata(
-  title: string = "Speedy Utils",
-  description: string = "SpeedyUtils offers a wide range of free online tools to simplify your tasks.",
-  keywords: string = "online tools, free tools, productivity utilities, SEO tools",
-  canonicalUrl: string = "https://www.speedyutils.com",
-  searchUrlTemplate?: string // optional
-) {
-  const jsonLd: any[] = [
-    {
+type GenMetadataOptions = {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+  searchUrlTemplate?: string;
+  isToolPage?: boolean; // optional flag to include SoftwareApplication
+  indexing?: boolean; // optional flag to enable/disable indexing in search engines
+};
+
+export default function genMetadata({
+  title = "Speedy Utils",
+  description = "SpeedyUtils offers a wide range of free online tools to simplify your tasks.",
+  keywords = "online tools, free tools, productivity utilities, SEO tools",
+  canonicalUrl = "https://www.speedyutils.com",
+  searchUrlTemplate,
+  isToolPage = false,
+  indexing = true,
+}: GenMetadataOptions) {
+  const jsonLd: any[] = [];
+
+  if (isToolPage) {
+    jsonLd.push({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: title,
@@ -17,8 +31,8 @@ export default function genMetadata(
         price: "0",
         priceCurrency: "INR",
       },
-    },
-  ];
+    });
+  }
 
   if (searchUrlTemplate) {
     jsonLd.push({
@@ -39,11 +53,11 @@ export default function genMetadata(
     keywords,
     metadataBase: new URL("https://www.speedyutils.com"),
     alternates: { canonical: canonicalUrl },
-    robots: { index: true, follow: true },
+    robots: (indexing)? { index: true, follow: true } : { index: false, follow: false},
     openGraph: {
       type: "website",
-      siteName: "SpeedyUtils",
-      locale: "en_US",
+      siteName: "Speedy Utils",
+      locale: "en_IN",
       title,
       description,
       url: canonicalUrl,

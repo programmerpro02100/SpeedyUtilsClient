@@ -6,4 +6,5 @@ export interface ToolType {
   description: string;
   metaDescription: string;
   metaKeywords: string;
+  feedbacks: string[];
 }

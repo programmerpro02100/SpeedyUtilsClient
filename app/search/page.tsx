@@ -1,6 +1,5 @@
 import React from 'react'
 import SearchQuery from '../components/SearchQuery/SearchQuery'
-import { ApiFetch } from '@/utils/ApiFetch';
 import genMetadata from '../components/MetaTags';
 import Navigbar from '../components/general/Navigbar/Navigbar';
 import Footer from '../components/general/Footer/Footer';
@@ -21,12 +20,14 @@ export async function generateMetadata({ searchParams }: { searchParams: { q?: s
     ? `${q}, tool search, speedyutils, find tools, search tools`
     : "search tools, find utilities, tool list, speedy utils";
 
-  return genMetadata(
+  return genMetadata({
     title,
     description,
     keywords,
-    `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
-    "https://www.speedyutils.com/search?q=" 
+    searchUrlTemplate: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
+    canonicalUrl: "https://www.speedyutils.com/search",
+    indexing: false,
+  }
   );
 }
 
