@@ -32,6 +32,7 @@ export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
     selectedCategory === "All"
       ? toolsData
       : toolsData.filter((tool) => tool.type === selectedCategory);
+  console.log(filteredTools)
   
   if(loading) return  <LoadingPage loadingText="Fetching tool from server..." />
 
