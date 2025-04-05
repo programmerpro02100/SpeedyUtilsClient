@@ -8,9 +8,9 @@ import { getCachedTools } from '@/utils/BuildCache';
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
-  const q = searchParams.q?.trim().toLowerCase() || "";
+  const q = (await searchParams).q?.trim().toLowerCase() || "";
 
   const title = q
     ? `Search results for "${q}" - Speedy Utils`
