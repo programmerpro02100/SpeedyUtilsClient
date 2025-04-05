@@ -5,7 +5,11 @@ import Navigbar from '../components/general/Navigbar/Navigbar';
 import Footer from '../components/general/Footer/Footer';
 import { getCachedTools } from '@/utils/BuildCache';
 
-export async function generateMetadata({ searchParams }: { searchParams: { q?: string } }) {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: { q?: string };
+}) {
   const q = searchParams.q?.trim().toLowerCase() || "";
 
   const title = q
@@ -25,10 +29,8 @@ export async function generateMetadata({ searchParams }: { searchParams: { q?: s
     description,
     keywords,
     searchUrlTemplate: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
-    canonicalUrl: "https://www.speedyutils.com/search",
-    indexing: false,
-  }
-  );
+    canonicalUrl: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
+  });
 }
 
 export default async function SearchPage() {
