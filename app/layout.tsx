@@ -21,6 +21,21 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+      <script
+        async={false}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Speedy Utils",
+            "url": "https://www.speedyutils.com",
+            "logo": "https://www.speedyutils.com/favicon.ico",
+          }),
+        }}
+      />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider store={store}>
           {children}

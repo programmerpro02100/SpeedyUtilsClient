@@ -3,29 +3,26 @@ import Tool from "./Tools"; // Import the client component
 import { ApiFetch } from "@/utils/ApiFetch";
 import { ToolType } from "@/interfaces";
 import genMetadata from "@/app/components/MetaTags";
+import { getCachedTools } from "@/utils/BuildCache";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{type: string, toolname: string}>
+  params: Promise<{ type: string, toolname: string }>
 }) {
-  const toolname =( await params).toolname;
-  const res = await ApiFetch(`/get-tool/${toolname}`);
-  
-  if (!res.ok) {
-    return {};
-  }
+  const toolname = (await params).toolname;
+  const tools = await getCachedTools();
 
-  const tool = await res.json();
+  const tool = tools.find(tool => tool.name === toolname)!;
 
   return genMetadata(tool.title, tool.metaDescription, tool.metaKeywords);
 }
 
 // ✅ Fetch Tool Data in a Server Component
-export default async function ToolPage({ params }: {params : Promise<{type: string, toolname: string}>}) {
+export default async function ToolPage({ params }: { params: Promise<{ type: string, toolname: string }> }) {
   const { toolname } = await params;
   const res = await ApiFetch(`/get-tool/${toolname}`);
-  if (!res.ok){
+  if (!res.ok) {
     return notFound(); // Show 404 error page
   }
 
@@ -40,10 +37,7 @@ export default async function ToolPage({ params }: {params : Promise<{type: stri
 
 // ✅ Generate Static Paths
 export async function generateStaticParams() {
-  const res = await ApiFetch("/get-all-tools");
-  if (!res.ok) return [];
-
-  const tools = await res.json();
+  const tools = await getCachedTools();
 
   return tools;
 }

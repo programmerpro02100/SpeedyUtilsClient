@@ -3,9 +3,9 @@ import Banner from "./components/home/Banner/Banner";
 import Toolbox from "./components/home/Toolbox/Toolbox";
 import Features from "./components/home/Features/Features";
 import Footer from "./components/general/Footer/Footer";
-import { ApiFetch } from "@/utils/ApiFetch";
-import { Tool_T} from "@/interfaces";
 import genMetadata from "./components/MetaTags";
+import { ToolType } from "@/interfaces";
+import { getCachedTools } from "@/utils/BuildCache";
 
 export function generateMetadata(){
   return genMetadata();
@@ -13,8 +13,7 @@ export function generateMetadata(){
 
 // ✅ Fetch Data in a Server Component
 export default async function Homepage() {
-  const response = await ApiFetch("/get-all-tools");
-  const toolsData: Tool_T[] = await response.json();
+  const toolsData: ToolType[] = await getCachedTools();
 
   return (
     <>

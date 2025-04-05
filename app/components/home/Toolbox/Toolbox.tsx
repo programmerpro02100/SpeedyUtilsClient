@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Toolbox.module.css";
 import { formatText } from "@/utils/Format";
-import { Tool_T } from "@/interfaces";
 import LoadingPage from "@/app/other/LoadingPage";
+import { ToolType } from "@/interfaces";
 
-export default function Toolbox({ toolsData }: { toolsData: Tool_T[] }) {
+export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [loading, setLoading] = useState(false); // Loading state
@@ -55,7 +55,7 @@ export default function Toolbox({ toolsData }: { toolsData: Tool_T[] }) {
           {filteredTools.length > 0 ? (
             filteredTools.map((tool) => (
               <div
-                key={tool.id}
+                key={tool._id}
                 className={styles.toolCard}
                 onClick={() => handleToolClick(tool.type, tool.name)}
               >
