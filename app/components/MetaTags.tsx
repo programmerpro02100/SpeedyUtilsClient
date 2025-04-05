@@ -7,8 +7,8 @@ export default function genMetadata(
     title,
     description,
     keywords,
-    metadataBase: new URL("https://speedyutils.com"),
-    alternates: { canonical: "https://speedyutils.com" },
+    metadataBase: new URL("https://www.speedyutils.com"),
+    alternates: { canonical: "https://www.speedyutils.com" },
     robots: { index: true, follow: true },
     openGraph: {
       type: "website",
@@ -16,7 +16,7 @@ export default function genMetadata(
       locale: "en_US",
       title,
       description,
-      url: "https://speedyutils.com",
+      url: "https://www.speedyutils.com",
       images: [{ url: "/favicon.ico", width: 1200, height: 630, type: "image/jpeg" }],
     },
     twitter: {

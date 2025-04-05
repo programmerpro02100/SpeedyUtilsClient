@@ -18,8 +18,19 @@ export default function AuthRedirect() {
         email: userData.email,
         profilePicture: userData.profilePicture,
       };
+
       dispatch(setUser(data));
-      router.push("/"); // Redirect to home
+
+      const type = localStorage.getItem("type");
+      const toolname = localStorage.getItem("toolname");
+
+      if (type && toolname) {
+        localStorage.removeItem("type");
+        localStorage.removeItem("toolname");
+        router.push(`/tool/${type}/${toolname}`);
+      } else {
+        router.push("/");
+      }
     }
   }, [dispatch, router, searchParams]);
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, NavDropdown, Button } from "react-bootstrap";
-import Image from "next/image"; // ✅ Use Next.js Image
+import Image from "next/image";
 import styles from "./Navigbar.module.css";
 import { FaBars } from "react-icons/fa";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
@@ -24,6 +24,19 @@ export default function Navigbar() {
   const serverUrl = useSelector((state: any) => state.user.serverUrl);
   const dispatch = useDispatch();
   const [scrolled, setScrolled] = useState(false);
+
+  const loginAction = () => {
+    const pathParts = pathname.split("/");
+
+    if (pathParts[1] === "tool" && pathParts.length >= 4) {
+      const type = pathParts[2];
+      const toolname = pathParts[3];
+      localStorage.setItem("type", type);
+      localStorage.setItem("toolname", toolname);
+    }
+
+    window.location.href = `${serverUrl}/auth/google`;
+  };
 
   const handleNav = (section: string) => {
     if (pathname !== "/") {
@@ -89,7 +102,7 @@ export default function Navigbar() {
                   <Image
                     src={user.profilePicture}
                     alt=""
-                    width={40} // ✅ Set width & height
+                    width={40}
                     height={40}
                     className={styles.profilePic}
                   />
@@ -100,7 +113,7 @@ export default function Navigbar() {
                 <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <Nav.Link href={`${serverUrl}/auth/google`} className={styles.navItem}>
+              <Nav.Link onClick={loginAction} className={styles.navItem}>
                 <Button>Log In</Button>
               </Nav.Link>
             )}
