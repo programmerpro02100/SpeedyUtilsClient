@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 info.json
+importMap.py
 /.pnp
 .pnp.*
 .yarn/*
