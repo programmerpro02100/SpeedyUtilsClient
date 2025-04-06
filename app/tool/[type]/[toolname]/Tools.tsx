@@ -8,8 +8,14 @@ import { Container } from "react-bootstrap";
 import Feedback from "@/app/components/general/Feedback/Feedback";
 import FeedbackScrollButton from "@/app/components/general/FeedbackScrollButton/FeedbackScrollButton";
 import { ToolType } from "@/interfaces";
+import { notFound } from "next/navigation";
+import { toPascalCase } from "@/utils/Format";
+import toolComponentMap from "@/app/components/tools/toolComponentMap";
 
-export default function Tool({ tool, ToolComponent }: { tool: ToolType, ToolComponent: ComponentType }) {
+
+export default function Tool({ tool }: { tool: ToolType }) {
+  const ToolComponent = toolComponentMap[toPascalCase(tool.name)];
+  if (!ToolComponent) return notFound()
 
   return (
     <>

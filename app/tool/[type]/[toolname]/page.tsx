@@ -1,9 +1,8 @@
-import Tool from "./Tools"; // Client component
+import Tool from "./Tools"; 
 import toolComponentMap from "@/app/components/tools/toolComponentMap";
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
-import { notFound } from "next/navigation";
-import { toPascalCase } from "@/utils/Format";
+
 
 export const revalidate = 86400;
 
@@ -33,10 +32,7 @@ export default async function ToolPage({
   const tools = await getCachedTools();
   const tool = tools.find((tool) => tool.name === toolname)!;
 
-  const ToolComponent = toolComponentMap[toPascalCase(tool.name)];
-  if (!ToolComponent) return notFound()
-
-  return <Tool tool={tool} ToolComponent={ToolComponent} />;
+  return <Tool tool={tool} />;
 }
 
 export async function generateStaticParams() {
