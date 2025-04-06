@@ -1,8 +1,6 @@
 import Tool from "./Tools"; 
-import toolComponentMap from "@/app/components/tools/toolComponentMap";
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
-
 
 export const revalidate = 86400;
 
