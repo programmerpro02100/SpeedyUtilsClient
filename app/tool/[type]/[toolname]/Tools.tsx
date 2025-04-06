@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ComponentType } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import Navigbar from "@/app/components/general/Navigbar/Navigbar";
 import Footer from "@/app/components/general/Footer/Footer";
