@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     serverURL: process.env.NODE_ENV === "production" 
       ? "https://server.speedyutils.com" 
       : "http://localhost:8080",
+    // serverURL : "https://server.speedyutils.com",
     baseUrl: process.env.NODE_ENV === "production" 
       ? "https://speedyutils.com" 
       : "http://localhost:3000",

@@ -1,0 +1,105 @@
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    padding: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .resultList {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+  
+  .resultList li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--shadow-color);
+    font-size: 1rem;
+  }
+  
+  .resultList li:last-child {
+    border-bottom: none;
+  }
+  
+  .headers {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: inset 0 0 8px var(--shadow-color);
+  }
+  
+  /* Headings inside the component */
+  .card h4,
+  .card h5,
+  .card h6 {
+    color: var(--accent-color);
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* Apply to any <ul> inside .alert */
+  :global(.alert-warning) ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  :global(.alert-warning) li {
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Style the URL input field inside the form */
+  .card input[type="url"] {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid var(--shadow-color);
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s ease-in-out, background-color 0.3s ease;
+  }
+  
+  .card input[type="url"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 191, 0, 0.25);
+    outline: none;
+  }
+  
+  /* Style the button in the form */
+  .card button[type="submit"] {
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+    margin-top: 0.75rem;
+  }
+  
+  .card button[type="submit"]:hover {
+    background-color: #e0ac00;
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 1.25rem;
+    }
+  
+    .resultList li {
+      font-size: 0.95rem;
+    }
+  
+    .headers {
+      font-size: 0.85rem;
+    }
+  }
+  

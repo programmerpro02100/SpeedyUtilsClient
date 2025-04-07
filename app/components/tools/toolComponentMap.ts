@@ -10,6 +10,7 @@ const PdfTextExtractor = dynamic(() => import("@/app/components/tools/Productivi
 import UnzipTool from "@/app/components/tools/Productivity/UnzipTool/UnzipTool";
 import KeywordDensityAnalyzer from "@/app/components/tools/SeoWeb/KeywordDensityAnalyzer/KeywordDensityAnalyzer";
 import MetatagChecker from "@/app/components/tools/SeoWeb/MetatagChecker/MetatagChecker";
+import SeoVerifier from "@/app/components/tools/SeoWeb/SeoVerifier/SeoVerifier";
 import SitemapValidator from "@/app/components/tools/SeoWeb/SitemapValidator/SitemapValidator";
 import InstagramBioGenerator from "@/app/components/tools/TextWriting/InstagramBioGenerator/InstagramBioGenerator";
 import WordCounter from "@/app/components/tools/TextWriting/WordCounter/WordCounter";
@@ -24,6 +25,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "UnzipTool": UnzipTool,
   "KeywordDensityAnalyzer": KeywordDensityAnalyzer,
   "MetatagChecker": MetatagChecker,
+  "SeoVerifier": SeoVerifier,
   "SitemapValidator": SitemapValidator,
   "InstagramBioGenerator": InstagramBioGenerator,
   "WordCounter": WordCounter,
