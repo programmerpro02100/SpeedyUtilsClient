@@ -88,7 +88,7 @@ export default function SeoVerifier() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setResult(null);
-    setError(null);
+    setError(null); 
     setLoading(true);
 
     try {
