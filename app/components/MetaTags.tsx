@@ -3,57 +3,43 @@ type GenMetadataOptions = {
   description?: string;
   keywords?: string;
   canonicalUrl?: string;
-  searchUrlTemplate?: string;
-  isToolPage?: boolean; // optional flag to include SoftwareApplication
-  indexing?: boolean; // optional flag to enable/disable indexing in search engines
+  indexing?: boolean; 
 };
 
 export default function genMetadata({
   title = "Speedy Utils",
-  description = "SpeedyUtils offers a wide range of free online tools to simplify your tasks.",
-  keywords = "online tools, free tools, productivity utilities, SEO tools",
+  description = "SpeedyUtils offers a wide range of free online tools to boost your productivity and simplify everyday tasks.",
+  keywords = "online tools, free tools, utilities, productivity tools, SEO tools, SpeedyUtils",
   canonicalUrl = "https://www.speedyutils.com",
-  searchUrlTemplate,
-  isToolPage = false,
   indexing = true,
 }: GenMetadataOptions) {
-  const jsonLd: any[] = [];
-
-  if (isToolPage) {
-    jsonLd.push({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: title,
-      operatingSystem: "All",
-      applicationCategory: "Utility",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "INR",
-      },
-    });
-  }
-
-  if (searchUrlTemplate) {
-    jsonLd.push({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      url: "https://www.speedyutils.com",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${searchUrlTemplate}{search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
-    });
-  }
+  const defaultOgImage = "/logo512.jpg"; 
 
   return {
     title,
     description,
     keywords,
     metadataBase: new URL("https://www.speedyutils.com"),
-    alternates: { canonical: canonicalUrl },
-    robots: (indexing)? { index: true, follow: true } : { index: false, follow: false},
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    robots: indexing
+      ? {
+          index: true,
+          follow: true,
+          nocache: false,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        }
+      : {
+          index: false,
+          follow: false,
+        },
     openGraph: {
       type: "website",
       siteName: "Speedy Utils",
@@ -61,22 +47,31 @@ export default function genMetadata({
       title,
       description,
       url: canonicalUrl,
-      images: [{ url: "/favicon.ico", width: 1200, height: 630, type: "image/jpeg" }],
+      images: [
+        {
+          url: defaultOgImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/favicon.ico"],
+      images: [defaultOgImage],
     },
+    themeColor: "#ffffff",
+    viewport:
+      "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes",
     other: {
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "SAMEORIGIN",
       "X-XSS-Protection": "1; mode=block",
       "msapplication-TileColor": "#ffffff",
       "format-detection": "telephone=no",
-      "content-type": "text/html; charset=UTF-8",
-      "application/ld+json": JSON.stringify(jsonLd),
     },
   };
 }

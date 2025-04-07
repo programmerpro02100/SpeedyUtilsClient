@@ -28,7 +28,6 @@ export async function generateMetadata({
     title,
     description,
     keywords,
-    searchUrlTemplate: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
     canonicalUrl: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
   });
 }

@@ -1,25 +1,38 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "SpeedyUtils",
+  "name": "SpeedyUtils - Free Online Tools for Developers & Creators",
+  "description": "SpeedyUtils is your all-in-one suite of fast, free online tools — including SEO analyzers, converters, extractors, and utilities for developers and creators.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
+      "src": "/icons/icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "/icons/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "/?utm_source=homescreen",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffbf00",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "categories": ["tools", "productivity", "utilities", "developer", "web"],
+  "lang": "en",
+  "screenshots": [
+    {
+      "src": "/screenshots/speedyutils-overview.png",
+      "sizes": "640x480",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": false
 }

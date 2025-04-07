@@ -7,15 +7,24 @@ import genMetadata from "./components/MetaTags";
 import { ToolType } from "@/interfaces";
 import { getCachedTools } from "@/utils/BuildCache";
 
-export function generateMetadata(){
-  return genMetadata({
-    searchUrlTemplate: "https://www.speedyutils.com/site/search?q=",
-  });
+export function generateMetadata() {
+  return genMetadata({});
 }
 
 // ✅ Fetch Data in a Server Component
 export default async function Homepage() {
   const toolsData: ToolType[] = await getCachedTools();
+
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.speedyutils.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.speedyutils.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
 
   return (
     <>
@@ -24,6 +33,11 @@ export default async function Homepage() {
       <Toolbox toolsData={toolsData} />
       <Features />
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
+      />
+
     </>
   );
 }

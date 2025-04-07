@@ -1,6 +1,6 @@
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
-import Tool from "./Tools"; 
+import Tool from "./Tools";
 
 export const revalidate = 86400;
 
@@ -17,7 +17,6 @@ export async function generateMetadata({
     title: tool.title,
     description: tool.metaDescription,
     keywords: tool.metaKeywords,
-    isToolPage: true,
   });
 }
 
@@ -30,7 +29,28 @@ export default async function ToolPage({
   const tools = await getCachedTools();
   const tool = tools.find((tool) => tool.name === toolname)!;
 
-  return <Tool tool={tool} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: tool.title,
+    operatingSystem: "All",
+    applicationCategory: "Utility",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "INR",
+    },
+  };
+
+  return(
+   <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+     />
+    <Tool tool={tool} />;
+  </>
+  )
 }
 
 export async function generateStaticParams() {
