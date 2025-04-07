@@ -20,7 +20,7 @@ export default function Tool({ tool }: { tool: ToolType }) {
   return (
     <>
       <Navigbar />
-      <h2 className="text-center tool-title">{tool?.title}</h2>
+      <h1 className="text-center tool-title">{tool?.title}</h1>
 
       <ToolComponent/>
 
