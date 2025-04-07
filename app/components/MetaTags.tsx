@@ -3,7 +3,7 @@ type GenMetadataOptions = {
   description?: string;
   keywords?: string;
   canonicalUrl?: string;
-  indexing?: boolean; 
+  indexing?: boolean;
 };
 
 export default function genMetadata({
@@ -13,7 +13,7 @@ export default function genMetadata({
   canonicalUrl = "https://www.speedyutils.com",
   indexing = true,
 }: GenMetadataOptions) {
-  const defaultOgImage = "/logo512.jpg"; 
+  const defaultOgImage = "/og-banner.png";
 
   return {
     title,
@@ -22,6 +22,10 @@ export default function genMetadata({
     metadataBase: new URL("https://www.speedyutils.com"),
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        en: canonicalUrl,
+        // Future support: Add more languages here (e.g., fr, es, etc.)
+      },
     },
     robots: indexing
       ? {
@@ -52,26 +56,50 @@ export default function genMetadata({
           url: defaultOgImage,
           width: 1200,
           height: 630,
-          alt: title,
-          type: "image/jpeg",
+          alt: `${title} - Speedy Utils preview`,
+          type: "image/png",
         },
       ],
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [defaultOgImage],
-    },
-    themeColor: "#ffffff",
+    // twitter: {
+    //   card: "summary_large_image",
+    //   title,
+    //   description,
+    //   images: [defaultOgImage],
+    //   site: "@SpeedyUtils",     // Replace with your Twitter handle
+    //   creator: "@SpeedyUtils",  // Replace with your Twitter handle
+    // },
+    themeColor: [
+      { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+      { media: "(prefers-color-scheme: dark)", color: "#121212" },
+    ],
     viewport:
       "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes",
+    manifest: "/site.webmanifest",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title,
+    },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/apple-touch-icon.png",
+    },
     other: {
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "SAMEORIGIN",
       "X-XSS-Protection": "1; mode=block",
       "msapplication-TileColor": "#ffffff",
       "format-detection": "telephone=no",
-    },
+      "color-scheme": "light dark",
+      "referrer": "no-referrer-when-downgrade",
+      category: "Text Writing, Development, SEO Web, Image Graphics, Math Conversion, Security Encryption, Productivity",
+      rating: "general",
+    },    
+    applicationName: "Speedy Utils",
+    // generator: "Next.js",
+    language: "en",
+    author: "SpeedyUtils Team",
   };
 }
