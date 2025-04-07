@@ -90,7 +90,7 @@ export default function Navigbar() {
             <Nav.Link onClick={() => handleNav("toolbox")} className={styles.navItem}>
               Tools
             </Nav.Link>
-            <Nav.Link href="#contact" className={styles.navItem}>
+            <Nav.Link onClick={()=>handleNav("contact")} className={styles.navItem}>
               Support
             </Nav.Link>
             <Nav.Link className={styles.navItem}>
