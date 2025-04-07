@@ -47,12 +47,12 @@
   }
   
   /* Apply to any <ul> inside .alert */
-  :global(.alert-warning) ul {
+  .alert-warning ul {
     padding-left: 1.2rem;
     margin-top: 0.5rem;
   }
   
-  :global(.alert-warning) li {
+ .alert-warning li {
     margin-bottom: 0.3rem;
   }
   
