@@ -49,6 +49,17 @@ export default function Navigbar() {
     }
   };
 
+  const handleSupport = ()=>{
+    if (pathname !== "/legal") {
+      router.push("/legal");
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   useEffect(() => {
     ApiFetch("/auth/check")
       .then((response) => {
@@ -90,7 +101,7 @@ export default function Navigbar() {
             <Nav.Link onClick={() => handleNav("toolbox")} className={styles.navItem}>
               Tools
             </Nav.Link>
-            <Nav.Link onClick={()=>handleNav("contact")} className={styles.navItem}>
+            <Nav.Link onClick={handleSupport} className={styles.navItem}>
               Support
             </Nav.Link>
             <Nav.Link className={styles.navItem}>
