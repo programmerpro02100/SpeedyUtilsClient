@@ -7,8 +7,8 @@ type GenMetadataOptions = {
 };
 
 export default function genMetadata({
-  title = "Speedy Utils",
-  description = "SpeedyUtils offers a wide range of free online tools to boost your productivity and simplify everyday tasks.",
+  title = "Free Online Tools for Everyday Tasks & Productivity | SpeedyUtils",
+  description = "Access a wide range of free online tools for text editing, file conversion, SEO checks, coding, and more. SpeedyUtils makes everyday tasks faster and easier.",
   keywords = "online tools, free tools, utilities, productivity tools, SEO tools, SpeedyUtils",
   canonicalUrl = "https://www.speedyutils.com",
   indexing = true,
