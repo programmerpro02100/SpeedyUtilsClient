@@ -1,0 +1,70 @@
+.container {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--shadow-color);
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .controls label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .controls select {
+    padding: 0.4rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1.5rem;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    resize: vertical;
+  }
+  
+  .preview {
+    background-color: var(--secondary-bg);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px var(--shadow-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .preview h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .preview p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  

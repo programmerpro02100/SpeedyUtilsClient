@@ -12,6 +12,7 @@ import KeywordDensityAnalyzer from "@/app/components/tools/SeoWeb/KeywordDensity
 import MetatagChecker from "@/app/components/tools/SeoWeb/MetatagChecker/MetatagChecker";
 import SeoVerifier from "@/app/components/tools/SeoWeb/SeoVerifier/SeoVerifier";
 import SitemapValidator from "@/app/components/tools/SeoWeb/SitemapValidator/SitemapValidator";
+import FontPair from "@/app/components/tools/TextWriting/FontPair/FontPair";
 import InstagramBioGenerator from "@/app/components/tools/TextWriting/InstagramBioGenerator/InstagramBioGenerator";
 import WordCounter from "@/app/components/tools/TextWriting/WordCounter/WordCounter";
 
@@ -27,6 +28,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "MetatagChecker": MetatagChecker,
   "SeoVerifier": SeoVerifier,
   "SitemapValidator": SitemapValidator,
+  "FontPair": FontPair,
   "InstagramBioGenerator": InstagramBioGenerator,
   "WordCounter": WordCounter,
 };
