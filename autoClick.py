@@ -99,7 +99,7 @@ activate_opera()
 
 tool_names = list_pretty_tool_names()
 print("Available Tools:", tool_names)
-cycle = 5
+cycle = 4
 for num in range(cycle):
     for name in tool_names:
         open_new_tab_and_search(f"{name} speedyutils")

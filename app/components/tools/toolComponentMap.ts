@@ -2,6 +2,7 @@
 import dynamic from "next/dynamic";
 
 const MarkdownToHtml = dynamic(() => import("@/app/components/tools/Development/MarkdownToHtml/MarkdownToHtml"), { ssr: false });
+import TechDetector from "@/app/components/tools/Development/TechDetector/TechDetector";
 import ImageCompressor from "@/app/components/tools/ImageGraphics/ImageCompressor/ImageCompressor";
 import CubicSolver from "@/app/components/tools/MathConversion/CubicSolver/CubicSolver";
 import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolver/QuadraticSolver";
@@ -18,6 +19,7 @@ import WordCounter from "@/app/components/tools/TextWriting/WordCounter/WordCoun
 
 const toolComponentMap: Record<string, React.ComponentType> = {
   "MarkdownToHtml": MarkdownToHtml,
+  "TechDetector": TechDetector,
   "ImageCompressor": ImageCompressor,
   "CubicSolver": CubicSolver,
   "QuadraticSolver": QuadraticSolver,
