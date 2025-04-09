@@ -15,7 +15,7 @@ export default function TechDetectorPage() {
     e.preventDefault()
     setError(null)
     setResult(null)
-    setLoading(true)
+    setLoading(true) 
 
     try {
       const res = await ApiFetch('/seo-proxy', {
