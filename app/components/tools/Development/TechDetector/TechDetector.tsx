@@ -11,13 +11,37 @@ export default function TechDetectorPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+  const savageMessages = [
+    "Bruh... trying to scan SpeedyUtils *with* SpeedyUtils? Try harder.",
+    "You really thought SpeedyUtils would snitch on itself? Nope. Try another site.",
+    "Analyzing SpeedyUtils with SpeedyUtils? That’s like Googling 'Google' on Google. Stop it.",
+    "Self-reflection is for people, not tools. Pick a real target.",
+    "Nice try, but SpeedyUtils doesn’t eat its own tail like an SEO ouroboros.",
+    "That's cute. But SpeedyUtils isn't here to analyze its own greatness.",
+    "Scanning SpeedyUtils? That’s like asking a mirror if you look good. Biased much?",
+    "You must be new here... SpeedyUtils doesn’t turn on itself.",
+    "Error 9001: Ego too big to analyze itself.",
+    "Denied. SpeedyUtils is off-limits. Go roast another site."
+  ]
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
     setResult(null)
-    setLoading(true) 
+    setLoading(true)
 
     try {
+      if (
+        url.startsWith('https://www.speedyutils.com') ||
+        url.startsWith('https://speedyutils.com')
+      ) {
+        const randomMessage =
+          savageMessages[Math.floor(Math.random() * savageMessages.length)]
+        alert(randomMessage)
+        setLoading(false)
+        return
+      }
+
       const res = await ApiFetch('/seo-proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
