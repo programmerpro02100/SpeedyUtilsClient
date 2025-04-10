@@ -45,4 +45,4 @@ output += "export default toolComponentMap;\n"
 with open(output_file, "w", encoding="utf-8") as f:
     f.write(output)
 
-print(f"✅ Generated toolComponentMap.ts with {len(map_entries)} tools.")
+print(f"Generated toolComponentMap.ts with {len(map_entries)} tools.")
