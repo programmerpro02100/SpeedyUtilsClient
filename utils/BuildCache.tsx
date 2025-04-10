@@ -9,7 +9,7 @@ export async function getCachedTools(): Promise<ToolType[]> {
   if (toolsPromise) return toolsPromise;
 
   toolsPromise = ApiFetch(`/get-all-tools`)
-    .then(async (res) => {
+    .then(async (res) => { 
       if (!res.ok) return [];
       const data: ToolType[] = await res.json();
       toolsCache = data ?? [];
