@@ -72,6 +72,13 @@ def click_result_with_mouse(x=314, y=297):
 #     print("❌ Text not found or confidence too low.")
 #     return False
 
+def preprocess(name):
+    if name == "Markdown To Html":
+        name = "Markdown To Html Converter"
+    elif name == "Tech Detector":
+        name = "Website Technology Detector"
+    return name
+
 def list_pretty_tool_names(base_dir="app/components/tools"):
     tool_names = []
 
@@ -90,16 +97,17 @@ def list_pretty_tool_names(base_dir="app/components/tools"):
                 continue
 
             pretty_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', tool_dir)
-            tool_names.append(pretty_name)
+            
+            tool_names.append(preprocess(pretty_name))
 
     return tool_names
 
-activate_opera()
+# activate_opera()
 # First search
-
+time.sleep(4)
 tool_names = list_pretty_tool_names()
 print("Available Tools:", tool_names)
-cycle = 4
+cycle = 10
 for num in range(cycle):
     for name in tool_names:
         open_new_tab_and_search(f"{name} speedyutils")
