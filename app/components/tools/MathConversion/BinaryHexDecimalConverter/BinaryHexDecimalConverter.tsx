@@ -64,7 +64,6 @@ export default function BinaryHexDecimalConverter() {
 
   return (
     <div className={styles.converter}>
-      <h2 className={styles.title}>Binary, Decimal & Hex Converter</h2>
       <div className={styles.inputGroup}>
         <label>Binary</label>
         <input type="text" value={binary} onChange={handleBinaryChange} />
