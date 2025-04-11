@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ToolType } from "@/interfaces";
 import styles from "./SearchQuery.module.css";
 import Link from "next/link";
+import { Button } from "react-bootstrap";
 import { useRouter } from "next/navigation"; // add this import
 
 type Props = {
@@ -65,7 +66,7 @@ export default function SearchQuery({ tools }: Props) {
 
   return (
     <div className={styles.container}>
-      <div className={`input-group mb-4 ${styles.searchBox}`}>
+      <div className={`input-group mb-4 mx-auto my-2 w-100 ${styles.searchBox}`}>
         <input
           type="text"
           className="form-control"
@@ -74,15 +75,14 @@ export default function SearchQuery({ tools }: Props) {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <button className="btn btn-primary" onClick={handleSearch}>
-          Search
-        </button>
+        <Button size="lg">
+           search
+        </Button>
       </div>
 
       {userQuery? 
           <h1 className={styles.heading}>Search Results for {userQuery}</h1>
-          :
-          <h1 className={styles.heading}>Search for any tool in search box</h1>
+          : null
       }
 
       {results.length === 0 ? (
