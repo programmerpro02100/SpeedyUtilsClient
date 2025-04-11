@@ -1,6 +1,7 @@
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
 import Tool from "./Tools";
+import JsonLd from "@/app/components/jsonLd";
 
 export const revalidate = 86400;
 
@@ -44,10 +45,7 @@ export default async function ToolPage({
 
   return(
    <>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-     />
+    <JsonLd jsonLd={jsonLd} />
     <Tool tool={tool} />;
   </>
   )

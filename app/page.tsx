@@ -6,6 +6,7 @@ import Footer from "./components/general/Footer/Footer";
 import genMetadata from "./components/MetaTags";
 import { ToolType } from "@/interfaces";
 import { getCachedTools } from "@/utils/BuildCache";
+import JsonLd from "./components/jsonLd";
 
 export function generateMetadata() {
   return genMetadata({});
@@ -33,11 +34,7 @@ export default async function Homepage() {
       <Toolbox toolsData={toolsData} />
       <Features />
       <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
-      />
-
+      <JsonLd jsonLd={jsonld}  />
     </>
   );
 }
