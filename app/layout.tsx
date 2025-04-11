@@ -1,10 +1,7 @@
-"use client"; // Ensure this runs on the client
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from "react-redux"; // Import Redux Provider
-import { store } from "@/store/store"; // Adjust path to your Redux store
 import "./globals.css";
+import ReduxProvider from "./ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,24 +19,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script
-        async={false}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Speedy Utils",
-            "url": "https://www.speedyutils.com",
-            "logo": "https://www.speedyutils.com/favicon.ico",
-          }),
-        }}
-      />
+        <script
+          async={false}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Speedy Utils",
+              "url": "https://www.speedyutils.com",
+              "logo": "https://www.speedyutils.com/favicon.ico",
+            }),
+          }}
+        />
+        <script
+          async={false}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://www.speedyutils.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.speedyutils.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider store={store}>
+        <ReduxProvider>
           {children}
-        </Provider>
+        </ReduxProvider>
       </body>
     </html>
   );

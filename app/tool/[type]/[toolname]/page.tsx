@@ -1,7 +1,6 @@
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
 import Tool from "./Tools";
-import JsonLd from "@/app/components/JsonLd";
 
 export const revalidate = 86400;
 
@@ -30,22 +29,8 @@ export default async function ToolPage({
   const tools = await getCachedTools();
   const tool = tools.find((tool) => tool.name === toolname)!;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: tool.title,
-    operatingSystem: "All",
-    applicationCategory: "Utility",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "INR",
-    },
-  };
-
   return(
    <>
-    <JsonLd jsonLd={jsonLd} />
     <Tool tool={tool} />;
   </>
   )
