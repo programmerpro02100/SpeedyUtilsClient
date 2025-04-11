@@ -10,6 +10,7 @@ import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolv
 import FileZipConverter from "@/app/components/tools/Productivity/FileZipConverter/FileZipConverter";
 const PdfTextExtractor = dynamic(() => import("@/app/components/tools/Productivity/PdfTextExtractor/PdfTextExtractor"), { ssr: false });
 import UnzipTool from "@/app/components/tools/Productivity/UnzipTool/UnzipTool";
+import TextEncryptionTool from "@/app/components/tools/SecurityEncryption/TextEncryptionTool/TextEncryptionTool";
 import KeywordDensityAnalyzer from "@/app/components/tools/SeoWeb/KeywordDensityAnalyzer/KeywordDensityAnalyzer";
 import MetatagChecker from "@/app/components/tools/SeoWeb/MetatagChecker/MetatagChecker";
 import SeoVerifier from "@/app/components/tools/SeoWeb/SeoVerifier/SeoVerifier";
@@ -28,6 +29,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "FileZipConverter": FileZipConverter,
   "PdfTextExtractor": PdfTextExtractor,
   "UnzipTool": UnzipTool,
+  "TextEncryptionTool": TextEncryptionTool,
   "KeywordDensityAnalyzer": KeywordDensityAnalyzer,
   "MetatagChecker": MetatagChecker,
   "SeoVerifier": SeoVerifier,
