@@ -11,6 +11,7 @@ export async function generateMetadata({
   searchParams: Promise<{ q?: string }>;
 }) {
   const q = (await searchParams).q?.trim().toLowerCase() || "";
+  if(q){
 
   const title = q
     ? `Search results for "${q}" - Speedy Utils`
@@ -30,6 +31,12 @@ export async function generateMetadata({
     keywords,
     canonicalUrl: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
   });
+}
+else{
+  return genMetadata({
+    canonicalUrl: "https://www.speedyutils.com/search"
+  })
+}
 }
 
 export default async function SearchPage() {

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ToolType } from "@/interfaces";
 import styles from "./SearchQuery.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // add this import
 
 type Props = {
   tools: ToolType[];
@@ -14,6 +15,20 @@ export default function SearchQuery({ tools }: Props) {
   const searchParams = useSearchParams();
   const [results, setResults] = useState<ToolType[]>([]);
   const [userQuery, setUserQuery] = useState("");
+
+  const router = useRouter();
+  const [input, setInput] = useState("");
+
+  const handleSearch = () => {
+    if (input.trim()) {
+      router.push(`/search?q=${encodeURIComponent(input.trim())}`);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
 
   useEffect(() => {
     const query = searchParams.get("q")?.toLowerCase().trim() || "";
@@ -50,7 +65,26 @@ export default function SearchQuery({ tools }: Props) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Search Results for {userQuery}</h1>
+      <div className={`input-group mb-4 ${styles.searchBox}`}>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search tools..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <button className="btn btn-primary" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
+
+      {userQuery? 
+          <h1 className={styles.heading}>Search Results for {userQuery}</h1>
+          :
+          <h1 className={styles.heading}>Search for any tool in search box</h1>
+      }
+
       {results.length === 0 ? (
         <p className={styles.noResults}>No tools found matching your search.</p>
       ) : (
