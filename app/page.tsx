@@ -6,7 +6,7 @@ import Footer from "./components/general/Footer/Footer";
 import genMetadata from "./components/MetaTags";
 import { ToolType } from "@/interfaces";
 import { getCachedTools } from "@/utils/BuildCache";
-import JsonLd from "./components/jsonLd";
+import JsonLd from "./components/JsonLd";
 
 export function generateMetadata() {
   return genMetadata({});

@@ -1,7 +1,7 @@
 import genMetadata from "@/app/components/MetaTags";
 import { getCachedTools } from "@/utils/BuildCache";
 import Tool from "./Tools";
-import JsonLd from "@/app/components/jsonLd";
+import JsonLd from "@/app/components/JsonLd";
 
 export const revalidate = 86400;
 
