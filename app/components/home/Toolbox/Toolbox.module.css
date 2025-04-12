@@ -47,6 +47,7 @@
   
   /* Tool Card */
   .toolCard {
+    text-decoration: none;
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     padding: 20px;

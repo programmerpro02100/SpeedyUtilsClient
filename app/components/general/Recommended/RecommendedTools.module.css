@@ -1,0 +1,52 @@
+.recommendationContainer {
+    margin-top: 4rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--card-bg);
+    box-shadow: 0 8px 24px var(--shadow-color);
+    color: var(--text-color);
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  .toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .toolCard {
+    display: block;
+    text-decoration: none;
+    background-color: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: inherit;
+  }
+  
+  .toolCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+  }
+  
+  .toolName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+  }
+  
+  .toolDescription {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+  }
+  

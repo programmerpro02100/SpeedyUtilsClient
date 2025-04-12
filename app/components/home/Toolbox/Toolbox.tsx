@@ -6,6 +6,7 @@ import styles from "./Toolbox.module.css";
 import { formatText } from "@/utils/Format";
 import LoadingPage from "@/app/other/LoadingPage";
 import { ToolType } from "@/interfaces";
+import Link from "next/link";
 
 export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
   const router = useRouter();
@@ -22,11 +23,6 @@ export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
     "security-encryption",
     "productivity",
   ];
-
-  const handleToolClick = (toolType: string, toolName: string) => {
-    setLoading(true); // Show loading state
-    router.push(`/tool/${toolType}/${toolName}`);
-  };
 
   const filteredTools =
     selectedCategory === "All"
@@ -54,14 +50,15 @@ export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
         <div className={styles.toolboxGrid}>
           {filteredTools.length > 0 ? (
             filteredTools.map((tool) => (
-              <div
+              <Link
                 key={tool._id}
                 className={styles.toolCard}
-                onClick={() => handleToolClick(tool.type, tool.name)}
+                href={`/tool/${tool.type}/${tool.name}`}
+                // onClick={() => handleToolClick(tool.type, tool.name)}
               >
                 <h3>{formatText(tool.name)}</h3>
                 <p className={styles.categoryTag}>{formatText(tool.type)}</p>
-              </div>
+              </Link>
             ))
           ) : (
             <p>No tools found in this category.</p>
