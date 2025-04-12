@@ -1,0 +1,15 @@
+.formatterContainer {
+    padding: 2rem 1rem;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--shadow-color);
+  }
+  
+  .editorWrapper {
+    border: 1px solid var(--shadow-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--primary-bg);
+  }
+  
