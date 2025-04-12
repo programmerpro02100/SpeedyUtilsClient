@@ -75,8 +75,6 @@ def click_result_with_mouse(x=314, y=297):
 def preprocess(name):
     if name == "Markdown To Html":
         name = "Markdown To Html Converter"
-    elif name == "Tech Detector":
-        name = "Website Technology Detector"
     return name
 
 def list_pretty_tool_names(base_dir="app/components/tools"):
@@ -108,9 +106,12 @@ time.sleep(4)
 tool_names = list_pretty_tool_names()
 print("Available Tools:", tool_names)
 cycle = 10
+time_s = 0
 for num in range(cycle):
     for name in tool_names:
-        open_new_tab_and_search(f"{name} speedyutils")
+        time_s += 8
+        if time_s>(1.5*60*60): os._exit(0)
+        open_new_tab_and_search(f'{name} "speedyutils" ')
         click_result_with_mouse()
         time.sleep(2)
         scroll_page()

@@ -17,6 +17,7 @@ export async function generateMetadata({
     title: tool.title,
     description: tool.metaDescription,
     keywords: tool.metaKeywords,
+    canonicalUrl: `https://www.speedyutils.com/tool/${tool.type}/${tool.name}`
   });
 }
 

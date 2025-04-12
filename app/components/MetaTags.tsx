@@ -61,14 +61,14 @@ export default function genMetadata({
         },
       ],
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [defaultOgImage],
-      site: "@SpeedyUtils",     // Replace with your actual Twitter handle if you have one
-      creator: "@SpeedyUtils",  // Replace with your actual Twitter handle
-    },
+    // twitter: {
+    //   card: "summary_large_image",
+    //   title,
+    //   description,
+    //   images: [defaultOgImage],
+    //   site: "@SpeedyUtils",     // Replace with your actual Twitter handle if you have one
+    //   creator: "@SpeedyUtils",  // Replace with your actual Twitter handle
+    // },
     themeColor: [
       { media: "(prefers-color-scheme: light)", color: "#ffffff" },
       { media: "(prefers-color-scheme: dark)", color: "#121212" },

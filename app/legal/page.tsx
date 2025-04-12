@@ -9,7 +9,9 @@ import Footer from "@/app/components/general/Footer/Footer";
 import genMetadata from "../components/MetaTags";
 
 export function generateMetadata(){
-  return genMetadata({}); 
+  return genMetadata({
+    canonicalUrl: `https://www.speedyutils.com/legal`
+  }); 
 }
 
 export default function LegalPage() {
