@@ -9,7 +9,7 @@ import BinaryHexDecimalConverter from "@/app/components/tools/MathConversion/Bin
 import CubicSolver from "@/app/components/tools/MathConversion/CubicSolver/CubicSolver";
 import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolver/QuadraticSolver";
 import FileZipConverter from "@/app/components/tools/Productivity/FileZipConverter/FileZipConverter";
-import HtmlToPdf from "@/app/components/tools/Productivity/HtmlToPdf/HtmlToPdf";
+const HtmlToPdf = dynamic(() => import("@/app/components/tools/Productivity/HtmlToPdf/HtmlToPdf"), { ssr: false });
 const PdfTextExtractor = dynamic(() => import("@/app/components/tools/Productivity/PdfTextExtractor/PdfTextExtractor"), { ssr: false });
 import UnzipTool from "@/app/components/tools/Productivity/UnzipTool/UnzipTool";
 import TextEncryptionTool from "@/app/components/tools/SecurityEncryption/TextEncryptionTool/TextEncryptionTool";

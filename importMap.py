@@ -5,7 +5,7 @@ base_dir = "app/components/tools"
 output_file = os.path.join(base_dir, "toolComponentMap.ts")
 
 # Tools that should be dynamically imported
-dynamically_imported_tools = {"MarkdownToHtml", "PdfTextExtractor"}
+dynamically_imported_tools = {"MarkdownToHtml", "PdfTextExtractor", "HtmlToPdf"}
 
 # Storage for import lines and map entries
 import_lines = ['import dynamic from "next/dynamic";\n']
