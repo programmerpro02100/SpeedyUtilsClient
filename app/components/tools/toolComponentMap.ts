@@ -5,6 +5,7 @@ import HtmlFormatter from "@/app/components/tools/Development/HtmlFormatter/Html
 const MarkdownToHtml = dynamic(() => import("@/app/components/tools/Development/MarkdownToHtml/MarkdownToHtml"), { ssr: false });
 import TechDetector from "@/app/components/tools/Development/TechDetector/TechDetector";
 import ImageCompressor from "@/app/components/tools/ImageGraphics/ImageCompressor/ImageCompressor";
+import ImageUpscaler from "@/app/components/tools/ImageGraphics/ImageUpscaler/ImageUpscaler";
 import BinaryHexDecimalConverter from "@/app/components/tools/MathConversion/BinaryHexDecimalConverter/BinaryHexDecimalConverter";
 import CubicSolver from "@/app/components/tools/MathConversion/CubicSolver/CubicSolver";
 import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolver/QuadraticSolver";
@@ -26,6 +27,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "MarkdownToHtml": MarkdownToHtml,
   "TechDetector": TechDetector,
   "ImageCompressor": ImageCompressor,
+  "ImageUpscaler": ImageUpscaler,
   "BinaryHexDecimalConverter": BinaryHexDecimalConverter,
   "CubicSolver": CubicSolver,
   "QuadraticSolver": QuadraticSolver,

@@ -14,6 +14,8 @@
     "@monaco-editor/react": "^4.7.0",
     "@mui/material": "^7.0.1",
     "@reduxjs/toolkit": "^2.6.1",
+    "@tensorflow/tfjs": "^4.11.0",
+    "@upscalerjs/esrgan-slim": "^1.0.0-beta.12",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.5",
     "cheerio": "^1.0.0",
@@ -33,7 +35,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "upscaler": "^1.0.0-beta.19"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
