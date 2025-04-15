@@ -56,7 +56,7 @@ export default function ImageUpscaler() {
     link.href = upscaledSrc
     link.download = `upscaled-${scale}x.png`
     link.click()
-  }
+  } 
 
   return (
     <div className={styles.container}>
