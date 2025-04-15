@@ -60,8 +60,6 @@ export default function ImageUpscaler() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Image Upscaler</h2>
-
       <div className={styles.uploadSection}>
         <input
           ref={fileInputRef}
