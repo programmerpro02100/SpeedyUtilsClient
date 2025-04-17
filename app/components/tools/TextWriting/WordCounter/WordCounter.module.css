@@ -3,6 +3,14 @@
     background: var(--primary-bg);
     color: var(--text-color);
   }
+
+  .wrapper textarea{
+     color: var(--text-color) !important;
+  }
+
+  .wrapper textarea::placeholder{
+    color: var(--secondary-text-color) !important;
+  }
   
   .title {
     font-size: 2rem;
