@@ -7,6 +7,7 @@ import TechDetector from "@/app/components/tools/Development/TechDetector/TechDe
 import ImageCompressor from "@/app/components/tools/ImageGraphics/ImageCompressor/ImageCompressor";
 import ImageUpscaler from "@/app/components/tools/ImageGraphics/ImageUpscaler/ImageUpscaler";
 import BinaryHexDecimalConverter from "@/app/components/tools/MathConversion/BinaryHexDecimalConverter/BinaryHexDecimalConverter";
+import CryptoTaxCalculator from "@/app/components/tools/MathConversion/CryptoTaxCalculator/CryptoTaxCalculator";
 import CubicSolver from "@/app/components/tools/MathConversion/CubicSolver/CubicSolver";
 import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolver/QuadraticSolver";
 import FileZipConverter from "@/app/components/tools/Productivity/FileZipConverter/FileZipConverter";
@@ -29,6 +30,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "ImageCompressor": ImageCompressor,
   "ImageUpscaler": ImageUpscaler,
   "BinaryHexDecimalConverter": BinaryHexDecimalConverter,
+  "CryptoTaxCalculator": CryptoTaxCalculator,
   "CubicSolver": CubicSolver,
   "QuadraticSolver": QuadraticSolver,
   "FileZipConverter": FileZipConverter,

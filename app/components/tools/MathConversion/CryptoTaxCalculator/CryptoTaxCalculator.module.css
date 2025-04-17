@@ -1,0 +1,108 @@
+.container {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-color);
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .inputGroup {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputGroup label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+  }
+  
+  .inputGroup input,
+  .inputGroup select {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.6rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: var(--primary-bg);
+    color: var(--text-color);
+  }
+  
+  .inputGroup input:focus,
+  .inputGroup select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+  }
+  
+  .checkboxWrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .calculateButton,
+  .clearButton {
+    flex: 1;
+    padding: 0.8rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  .calculateButton {
+    background: var(--accent-color);
+    color: #fff;
+  }
+  
+  .calculateButton:hover {
+    background: #e0a800;
+  }
+  
+  .clearButton {
+    background: #ccc;
+    color: #333;
+  }
+  
+  .clearButton:hover {
+    background: #bbb;
+  }
+  
+  .result {
+    margin-top: 2rem;
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .result h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
