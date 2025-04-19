@@ -9,6 +9,7 @@ import ImageUpscaler from "@/app/components/tools/ImageGraphics/ImageUpscaler/Im
 import BinaryHexDecimalConverter from "@/app/components/tools/MathConversion/BinaryHexDecimalConverter/BinaryHexDecimalConverter";
 import CryptoTaxCalculator from "@/app/components/tools/MathConversion/CryptoTaxCalculator/CryptoTaxCalculator";
 import CubicSolver from "@/app/components/tools/MathConversion/CubicSolver/CubicSolver";
+import EmiCalculator from "@/app/components/tools/MathConversion/EmiCalculator/EmiCalculator";
 import QuadraticSolver from "@/app/components/tools/MathConversion/QuadraticSolver/QuadraticSolver";
 import FileZipConverter from "@/app/components/tools/Productivity/FileZipConverter/FileZipConverter";
 const HtmlToPdf = dynamic(() => import("@/app/components/tools/Productivity/HtmlToPdf/HtmlToPdf"), { ssr: false });
@@ -32,6 +33,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "BinaryHexDecimalConverter": BinaryHexDecimalConverter,
   "CryptoTaxCalculator": CryptoTaxCalculator,
   "CubicSolver": CubicSolver,
+  "EmiCalculator": EmiCalculator,
   "QuadraticSolver": QuadraticSolver,
   "FileZipConverter": FileZipConverter,
   "HtmlToPdf": HtmlToPdf,
