@@ -7,7 +7,7 @@ export const revalidate = 86400;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ type: string; toolname: string }>;
+  params: Promise<{ toolname: string }>;
 }) {
   const toolname = (await params).toolname;
   const tools = await getCachedTools();
@@ -24,7 +24,7 @@ export async function generateMetadata({
 export default async function ToolPage({
   params,
 }: {
-  params: Promise<{ type: string; toolname: string }>;
+  params: Promise<{ toolname: string }>;
 }) {
   const { toolname } = await params;
   const tools = await getCachedTools();
