@@ -1,6 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToolType } from "@/interfaces";
 import styles from "./SearchQuery.module.css";
@@ -10,10 +9,10 @@ import { useRouter } from "next/navigation"; // add this import
 
 type Props = {
   tools: ToolType[];
+  searchQuery: string
 };
 
-export default function SearchQuery({ tools }: Props) {
-  const searchParams = useSearchParams();
+export default function SearchQuery({ tools, searchQuery }: Props) {
   const [results, setResults] = useState<ToolType[]>([]);
   const [userQuery, setUserQuery] = useState("");
 
@@ -32,7 +31,7 @@ export default function SearchQuery({ tools }: Props) {
 
 
   useEffect(() => {
-    const query = searchParams.get("q")?.toLowerCase().trim() || "";
+    const query = searchQuery.toLowerCase().trim() || "";
     setUserQuery(query);
 
     if (!query) {
@@ -53,7 +52,7 @@ export default function SearchQuery({ tools }: Props) {
       if (tool.type.toLowerCase().includes(query)) score += 1;
 
       return { tool, score };
-    });
+    }, []);
 
     // Sort by score, then fallback to initial order if scores are equal
     const sorted = scoredTools
@@ -62,7 +61,7 @@ export default function SearchQuery({ tools }: Props) {
       .slice(0, 10);
 
     setResults(sorted);
-  }, [searchParams, tools]);
+  }, [tools]);
 
   return (
     <div className={styles.container}>

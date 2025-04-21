@@ -1,15 +1,9 @@
-// app/search/page.tsx
-import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
-import genMetadata from "../components/MetaTags";
-import Navigbar from "../components/general/Navigbar/Navigbar";
-import Footer from "../components/general/Footer/Footer";
-import { getCachedTools } from "@/utils/BuildCache";
-
-// Dynamically import SearchQuery to make sure it's treated as a client component
-const SearchQuery = dynamic(() => import("../components/SearchQuery/SearchQuery"), {
-  ssr: false,
-});
+import React from 'react'
+import SearchQuery from '../components/SearchQuery/SearchQuery'
+import genMetadata from '../components/MetaTags';
+import Navigbar from '../components/general/Navigbar/Navigbar';
+import Footer from '../components/general/Footer/Footer';
+import { getCachedTools } from '@/utils/BuildCache';
 
 export async function generateMetadata({
   searchParams,
@@ -17,35 +11,44 @@ export async function generateMetadata({
   searchParams: Promise<{ q?: string }>;
 }) {
   const q = (await searchParams).q?.trim().toLowerCase() || "";
+  if(q){
 
-  if (q) {
-    const title = `Search results for "${q}" - Speedy Utils`;
-    const description = `Explore tools related to "${q}" on SpeedyUtils. Find the most relevant utilities to simplify your tasks.`;
-    const keywords = `${q}, tool search, speedyutils, find tools, search tools`;
+  const title = q
+    ? `Search results for "${q}" - Speedy Utils`
+    : "Search Tools - Speedy Utils";
 
-    return genMetadata({
-      title,
-      description,
-      keywords,
-      canonicalUrl: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
-    });
-  } else {
-    return genMetadata({
-      canonicalUrl: "https://www.speedyutils.com/search",
-    });
-  }
+  const description = q
+    ? `Explore tools related to "${q}" on SpeedyUtils. Find the most relevant utilities to simplify your tasks.`
+    : "Browse and search from a wide variety of free online tools available on SpeedyUtils.";
+
+  const keywords = q
+    ? `${q}, tool search, speedyutils, find tools, search tools`
+    : "search tools, find utilities, tool list, speedy utils";
+
+  return genMetadata({
+    title,
+    description,
+    keywords,
+    canonicalUrl: `https://www.speedyutils.com/search?q=${encodeURIComponent(q)}`,
+  });
+}
+else{
+  return genMetadata({
+    canonicalUrl: "https://www.speedyutils.com/search"
+  })
+}
 }
 
-export default async function SearchPage() {
-  const tools = await getCachedTools();
-
+export default async function SearchPage({ searchParams }: {searchParams : {q?: string}}) {
+    const tools = await getCachedTools();
+    var query = ""
+    if(searchParams && searchParams.q) query = searchParams.q;
+  
   return (
     <>
-      <Navigbar />
-      <Suspense fallback={<div className="text-center py-4">Loading search results...</div>}>
-        <SearchQuery tools={tools} />
-      </Suspense>
-      <Footer />
+     <Navigbar />
+     <SearchQuery tools={tools} searchQuery={query} />
+     <Footer />
     </>
-  );
+  )
 }
