@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 info.json
+autoClick.py
+
 /.pnp
 .pnp.*
 .yarn/*

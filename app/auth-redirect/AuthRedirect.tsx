@@ -27,7 +27,7 @@ export default function AuthRedirect() {
       if (type && toolname) {
         localStorage.removeItem("type");
         localStorage.removeItem("toolname");
-        router.push(`/tool/${type}/${toolname}`);
+        router.push(`/${toolname}`);
       } else {
         router.push("/");
       }

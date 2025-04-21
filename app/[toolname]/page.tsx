@@ -17,7 +17,7 @@ export async function generateMetadata({
     title: tool.title,
     description: tool.metaDescription,
     keywords: tool.metaKeywords,
-    canonicalUrl: `https://www.speedyutils.com/tool/${tool.type}/${tool.name}`
+    canonicalUrl: `https://www.speedyutils.com/${tool.name}`
   });
 }
 
@@ -39,5 +39,5 @@ export default async function ToolPage({
 
 export async function generateStaticParams() {
   const tools = await getCachedTools();
-  return tools.map((tool) => ({ type: tool.type, toolname: tool.name }));
+  return tools.map((tool) => ({toolname: tool.name }));
 }

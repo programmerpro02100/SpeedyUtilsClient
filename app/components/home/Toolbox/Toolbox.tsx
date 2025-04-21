@@ -53,7 +53,7 @@ export default function Toolbox({ toolsData }: { toolsData: ToolType[] }) {
               <Link
                 key={tool._id}
                 className={styles.toolCard}
-                href={`/tool/${tool.type}/${tool.name}`}
+                href={`/${tool.name}`}
                 // onClick={() => handleToolClick(tool.type, tool.name)}
               >
                 <h3>{formatText(tool.name)}</h3>

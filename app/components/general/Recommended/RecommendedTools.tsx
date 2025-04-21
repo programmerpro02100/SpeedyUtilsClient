@@ -13,7 +13,7 @@ export default function RecommendedTools({recommendedTools}: {recommendedTools :
       <h2 className={styles.heading}>You Might Also Like</h2>
       <div className={styles.toolsGrid}>
         {recommendedTools.map((tool) => (
-          <Link href={`/tool/${tool.name}`} key={tool.name} className={styles.toolCard}>
+          <Link href={`/${tool.name}`} key={tool.name} className={styles.toolCard}>
             <div>
               <h3 className={styles.toolName}>{formatText(tool.name)}</h3>
               <p className={styles.toolDescription}>{tool.metaDescription}</p>
