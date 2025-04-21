@@ -39,10 +39,11 @@ else{
 }
 }
 
-export default async function SearchPage({ searchParams }: {searchParams : {q?: string}}) {
+export default async function SearchPage({ searchParams }: {searchParams : Promise<{q?: string}>}) {
     const tools = await getCachedTools();
+    const sParams = await searchParams
     var query = ""
-    if(searchParams && searchParams.q) query = searchParams.q;
+    if(sParams && sParams.q) query = sParams.q;
   
   return (
     <>
