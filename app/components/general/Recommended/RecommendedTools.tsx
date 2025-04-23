@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './RecommendedTools.module.css';
 import { formatText } from '@/utils/Format';
 import { ToolType } from '@/interfaces';
-import { Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap'; 
 
 export default function RecommendedTools({recommendedTools}: {recommendedTools : ToolType[]}) {
   return (
