@@ -93,7 +93,13 @@ html {
   font-size: 0.9rem;
   margin: 6rem 0;
 }
+
 .tool-description h2{
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.tool-description h3{
   font-weight: 900;
   font-size: 1rem;
 }
