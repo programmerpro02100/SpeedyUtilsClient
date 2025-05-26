@@ -6,16 +6,16 @@ const nextConfig: NextConfig = {
     // serverURL: process.env.NODE_ENV === "production" 
     //   ? "https://server.speedyutils.com" 
     //   : "http://localhost:8080",
-    serverURL : "https://server.speedyutils.com",
-    baseUrl: process.env.NODE_ENV === "production" 
-      ? "https://speedyutils.com" 
+    serverURL: "https://server.speedyutils.com",
+    baseUrl: process.env.NODE_ENV === "production"
+      ? "https://speedyutils.com"
       : "http://localhost:3000",
     secret: "jlkdjfldskj]o[p5432io4jp]p]01412343nliqnmsiwqtdkn,a.n;iet",
   },
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /pdf\.worker\.(min\.)?js/,
       use: "worker-loader",
@@ -23,13 +23,13 @@ const nextConfig: NextConfig = {
     return config;
   },
   async rewrites() {
-    const serverURL=  process.env.NODE_ENV === "production" 
-    ? "https://server.speedyutils.com" 
-    : "http://localhost:8080"
+    const serverURL = process.env.NODE_ENV === "production"
+      ? "https://server.speedyutils.com"
+      : "http://localhost:8080"
     return [
       {
         source: "/sitemap-main.xml",
-        destination: `${serverURL}/sitemap-main.xml` ,
+        destination: `${serverURL}/sitemap-main.xml`,
       },
       {
         source: "/sitemap-tools.xml",
