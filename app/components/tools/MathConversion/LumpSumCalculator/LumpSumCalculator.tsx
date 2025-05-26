@@ -14,8 +14,6 @@ const LumpSumCalculator = () => {
 
   return (
     <div className={styles.card}>
-      <h2 className={styles.heading}>📈 Lump Sum Investment Calculator</h2>
-
       <div className={styles.formGroup}>
         <label>💰 Investment Amount (₹)</label>
         <input type="number" value={principal} min={0}
