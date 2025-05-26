@@ -14,21 +14,22 @@ const LumpSumCalculator = () => {
 
   return (
     <div className={styles.card}>
+
       <div className={styles.formGroup}>
         <label>💰 Investment Amount (₹)</label>
-        <input type="number" value={principal} 
+        <input type="number" value={principal} min={0}
                onChange={(e) => setPrincipal(+e.target.value)} />
       </div>
 
       <div className={styles.formGroup}>
         <label>📅 Investment Duration (Years)</label>
-        <input type="number" value={years}
+        <input type="number" value={years} min={1}
                onChange={(e) => setYears(+e.target.value)} />
       </div>
 
       <div className={styles.formGroup}>
         <label>📊 Expected Annual Return (%)</label>
-        <input type="number" value={rate} 
+        <input type="number" value={rate} min={0}
                onChange={(e) => setRate(+e.target.value)} />
       </div>
 
