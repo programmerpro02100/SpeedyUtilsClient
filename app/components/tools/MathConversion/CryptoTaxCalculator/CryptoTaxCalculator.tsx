@@ -9,7 +9,7 @@ const CryptoTaxCalculator = () => {
   const [capitalLosses, setCapitalLosses] = useState('');
   const [carryoverLoss, setCarryoverLoss] = useState(false);
   const [shortTermRate, setShortTermRate] = useState('30');
-  const [longTermRate, setLongTermRate] = useState('15');
+  const [longTermRate, setLongTermRate] = useState('12.5');
   const [taxSummary, setTaxSummary] = useState<null | {
     taxableShortTerm: number;
     taxableLongTerm: number;
@@ -56,7 +56,7 @@ const CryptoTaxCalculator = () => {
     setCapitalLosses('');
     setCarryoverLoss(false);
     setShortTermRate('30');
-    setLongTermRate('15');
+    setLongTermRate('12.5');
     setTaxSummary(null);
     setError('');
   };
