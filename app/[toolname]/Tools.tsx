@@ -48,5 +48,5 @@ export default function Tool({ tool }: { tool: ToolType }) {
       <Feedback toolname={tool.name} userFeedbacks={tool.feedbacks}/>
       <Footer />
     </>
-  );
+  )
 }

@@ -32,7 +32,7 @@ export default async function ToolPage({
 
   return(
    <>
-    <Tool tool={tool} />;
+    <Tool tool={tool} />
   </>
   )
 }
