@@ -142,7 +142,9 @@ const EXIFDataViewer = () => {
                         </ul>
                         {gpsCoords && (
                             <div className={styles.mapContainer}>
+                                // @ts-ignore
                                 <MapContainer center={gpsCoords} zoom={13} scrollWheelZoom={false} style={{ height: "250px" }}>
+                                    // @ts-ignore
                                     <TileLayer
                                         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
