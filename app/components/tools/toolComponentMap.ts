@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import HtmlFormatter from "@/app/components/tools/Development/HtmlFormatter/HtmlFormatter";
 const MarkdownToHtml = dynamic(() => import("@/app/components/tools/Development/MarkdownToHtml/MarkdownToHtml"), { ssr: false });
 import TechDetector from "@/app/components/tools/Development/TechDetector/TechDetector";
+import ExifDataViewer from "@/app/components/tools/ImageGraphics/ExifDataViewer/ExifDataViewer";
 import ImageCompressor from "@/app/components/tools/ImageGraphics/ImageCompressor/ImageCompressor";
 import ImageUpscaler from "@/app/components/tools/ImageGraphics/ImageUpscaler/ImageUpscaler";
 import BinaryHexDecimalConverter from "@/app/components/tools/MathConversion/BinaryHexDecimalConverter/BinaryHexDecimalConverter";
@@ -30,6 +31,7 @@ const toolComponentMap: Record<string, React.ComponentType> = {
   "HtmlFormatter": HtmlFormatter,
   "MarkdownToHtml": MarkdownToHtml,
   "TechDetector": TechDetector,
+  "ExifDataViewer": ExifDataViewer,
   "ImageCompressor": ImageCompressor,
   "ImageUpscaler": ImageUpscaler,
   "BinaryHexDecimalConverter": BinaryHexDecimalConverter,
