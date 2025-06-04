@@ -42,7 +42,7 @@ const EXIFDataViewer = () => {
             reader.onload = () => {
                 const img = new Image();
                 img.onload = () => {
-                    EXIF.getData(img as any, function () {
+                    EXIF.getData(img as any, function (this : any) {
                         const meta = EXIF.getAllTags(this);
                         results.push({ fileName: file.name, metadata: meta });
                         setMetadataList((prev) => [...prev, { fileName: file.name, metadata: meta }]);
