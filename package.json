@@ -25,6 +25,7 @@
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.3",
     "jszip": "^3.10.1",
+    "leaflet": "^1.9.4",
     "marked": "^15.0.7",
     "next": "15.2.3",
     "openpgp": "^6.1.0",
