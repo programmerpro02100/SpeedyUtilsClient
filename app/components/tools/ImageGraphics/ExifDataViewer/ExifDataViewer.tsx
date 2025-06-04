@@ -1,5 +1,6 @@
 "use client";
 
+import 'leaflet/dist/leaflet.css';
 import React, { useState, useRef, useCallback } from "react";
 import styles from "./ExifDataViewer.module.css";
 import EXIF from "exif-js";
@@ -143,12 +144,12 @@ const EXIFDataViewer = () => {
                         </ul>
                         {gpsCoords && (
                             <div className={styles.mapContainer}>
-                                <MapContainer center={gpsCoords} zoom={13} scrollWheelZoom={false} style={{ height: "250px" }}>
+                                <MapContainer center={gpsCoords as [number, number]} zoom={13} scrollWheelZoom={false} style={{ height: "250px" }}>
                                     <TileLayer
                                         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'
                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                     />
-                                    <Marker position={gpsCoords}>
+                                    <Marker position={gpsCoords as [number, number]}>
                                         <Popup>
                                             Image Location <br /> Lat: {gpsCoords[0].toFixed(5)}, Lon: {gpsCoords[1].toFixed(5)}
                                         </Popup>
