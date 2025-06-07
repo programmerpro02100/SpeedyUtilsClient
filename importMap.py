@@ -46,3 +46,40 @@ with open(output_file, "w", encoding="utf-8") as f:
     f.write(output)
 
 print(f"Generated toolComponentMap.ts with {len(map_entries)} tools.")
+
+
+# Description Format 
+
+# Give me a detailed, SEO-optimized description in Markdown format for my tool "[TOOL NAME]" for SpeedyUtils.com.
+
+# Use this structure:
+
+# What Is [Tool Name]?
+
+# Why Use This Tool?
+
+# Key Features
+
+# How To Use [Tool Name]
+
+# Example Use Cases
+
+# Tips for Best Results
+
+# Planned Features
+
+# Frequently Asked Questions (FAQ)
+
+# Final Thoughts
+
+# About SpeedyUtils.com
+
+# The text should be at least 2000 words long (don't make it less in any case focus on this line).
+
+# Tone should be professional yet approachable.
+
+# The content will be rendered via React-Markdown (so use proper headings ##, ###, lists, etc.).
+
+# No need to repeat the title as an extra heading — the tool title is already shown at the top of the page.
+
+# Do not use too many emojis — maximum 2–3 if really needed.

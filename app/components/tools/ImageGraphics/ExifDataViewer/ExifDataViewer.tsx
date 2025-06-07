@@ -14,7 +14,7 @@ const EXIFDataViewer = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const handleDownloadZip = () => {
         if (metadataList.length === 0) return;
-
+ 
         const zip = new JSZip();
 
         metadataList.forEach(({ fileName, metadata }) => {
