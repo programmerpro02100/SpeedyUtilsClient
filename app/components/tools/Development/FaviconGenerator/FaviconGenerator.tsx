@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import styles from './FaviconGenerator.module.css';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
-import ico from 'icojs';
 
 const FaviconGenerator: React.FC = () => {
     const [file, setFile] = useState<File | null>(null);
@@ -193,7 +192,7 @@ const FaviconGenerator: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.heading}>Advanced Favicon & App Icon Generator</h1>
+            {/* <h1 className={styles.heading}>Advanced Favicon & App Icon Generator</h1> */}
             <p className={styles.description}>
                 Upload your logo/image and generate optimized favicon.ico, app icons, manifest.json, and HTML snippet.
             </p>
