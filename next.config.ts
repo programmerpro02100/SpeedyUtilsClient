@@ -34,6 +34,10 @@ const nextConfig: NextConfig = {
       {
         source: "/sitemap-tools.xml",
         destination: `${serverURL}/sitemap-tools.xml`,
+      },
+      {
+        source: "/f0504a9c44eb4d79a00bb7c83b65873b.txt",
+        destination: `${serverURL}/f0504a9c44eb4d79a00bb7c83b65873b.txt`
       }
     ];
   },
